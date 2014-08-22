@@ -1,0 +1,13 @@
+---
+title: "Preparing for publishing with GitHub Pages"
+output: html_document
+---
+
+At the end of discussing how to produce <code>HTML</code> documents from <code>.Rmd</code> the official page of the <code>rmarkdown</code> package mentions that entire website can be produced using R Markdown and the described methodology. 
+
+To create [rmarkdown.rstudio.com](rmarkdown.rstudio.com) GitHub Pages with combination of Jekyll have been used. The current guide narrates the **process of preparations needed to publish a statitic website on GitHub**.
+
+
+### GitHub Pages Help
+
+To organize the process of learning of new concept and terminology start with [GitHub Pages](https://help.github.com/categories/20/articles) FAQ collection. I will be moving through this reference articles in order, installing the components as needed.

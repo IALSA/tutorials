@@ -1,0 +1,8 @@
+---
+title: "Preparing your work station for dynamic reporting"
+output: html_document
+---
+
+Follow these check points to ensure the consistency of work statition setup
+
+## Install MiKTeX
