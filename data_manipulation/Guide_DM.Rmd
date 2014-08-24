@@ -1,0 +1,12 @@
+---
+title: "Data Manipulation Guide"
+author: "Andrey Koval"
+date: "Sunday, August 24, 2014"
+output: html_document
+---
+
+### Useful resources
+
+There are too many great resources out there for learning data manipulation with R. I will list a few of them, to help narrow the scope for the learner. 
+
+[Personality Project](http://personality-project.org/r/r.data.entry.html) - excellent reference guide. Special appeal to the personality researchers. 
