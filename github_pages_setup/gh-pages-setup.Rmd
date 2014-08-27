@@ -52,3 +52,8 @@ gem 'github-pages'
 ```
   - renamed <code>Gemfile.txt</code> into <code>Gemfile</code>
   
+  
+### Running Jekyll
+  1. On GitHub, in the root of the repository, created a new branch "gh-pages" from master branch.
+    - in Git for Windows, synced, created "gh-pages", and published repository
+    
