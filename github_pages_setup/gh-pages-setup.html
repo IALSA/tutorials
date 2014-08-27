@@ -60,16 +60,50 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <div id="github-pages-help" class="section level3">
 <h3>GitHub Pages Help</h3>
 <p>To organize the process of learning new concepts and terminology the reader is directed to <a href="https://help.github.com/categories/20/articles">GitHub Pages Help</a>. I will be moving through this reference articles in order, installing the components as needed.</p>
-</div>
-<div id="user-organizations-vs-project-pages" class="section level3">
-<h3>(User &amp; Organizations) vs (Project) Pages</h3>
 <div id="user-organization" class="section level4">
 <h4>User &amp; Organization</h4>
 <ul>
-<li>create separate repository</li>
-<li>name is <code>username/username.github.io</code></li>
+<li>User - person</li>
+<li>Organization - lab</li>
+<li>Project - publication</li>
 </ul>
 </div>
+</div>
+<div id="creating-pages-with-the-automatic-generator" class="section level3">
+<h3>Creating Pages with the automatic generator</h3>
+<p>impressions so far: - limiting: - has to go throw creating every time - can’t figure out how add pages to gh-pages branch - clunky</p>
+</div>
+<div id="installing-jekyll" class="section level3">
+<h3>Installing Jekyll</h3>
+<ol style="list-style-type: decimal">
+<li>Ruby A. Installation
+<ul>
+<li>Installing Ruby for Windows using <a href="https://www.ruby-lang.org/en/installation/#rubyinstaller">RubyInstaller</a></li>
+<li>version: <strong>Ruby 1.9.3-p545</strong></li>
+<li>installation directory: <code>C:193</code></li>
+<li>check <strong>Add Ruby executables to your PATH</strong> box, I checked all B. Developmental Kit</li>
+<li>tdm-32-4.5.2</li>
+</ul></li>
+<li>Bundler</li>
+</ol>
+<ul>
+<li>Open there local GitHub folder</li>
+<li>Initiate command line by typing <code>cmd</code> in the address bar of the File Explorer</li>
+<li>type in <code>gem install bundler</code> in the command line
+<ul>
+<li>the text should say that the 1 gem has been installed</li>
+</ul></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Jekyll</li>
+</ol>
+<ul>
+<li>created a text file <code>Gemfile.txt</code> in the root of the repository</li>
+<li><p>the content of the file is</p>
+<pre><code>source 'https://rubygems.org'
+gem 'github-pages'</code></pre></li>
+<li><p>renamed <code>Gemfile.txt</code> into <code>Gemfile</code></p></li>
+</ul>
 </div>
 
 
