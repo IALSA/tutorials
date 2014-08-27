@@ -14,3 +14,7 @@ To organize the process of learning new concepts and terminology the reader is d
 
 
 ### (User & Organizations) vs (Project) Pages
+
+#### User & Organization  
+  - create separate repository
+  - name is <code>username/username.github.io</code>
