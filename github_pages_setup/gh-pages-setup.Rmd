@@ -16,5 +16,15 @@ To organize the process of learning new concepts and terminology the reader is d
 ### (User & Organizations) vs (Project) Pages
 
 #### User & Organization  
-  - create separate repository
-  - name is <code>username/username.github.io</code>
+  - User - person
+  - Organization - lab
+  - Project - publication
+  
+### Creating Pages with the automatic generator
+  impressions so far:
+  -  limiting:
+    - has to go throw creating every time
+    - can't figure out how add pages to gh-pages branch
+  - clunky
+  
+  
