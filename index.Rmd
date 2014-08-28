@@ -1,10 +1,10 @@
 ---
 title: "index"
-output: html_document
 ---
 
-RRR tutorials
-======================
+***
+
+### RRR tutorials
 
 Hello and welcome to the tutorials on Reproducible Research with R.  
 Start with [installation](./work-station-setup/work-station-setup.html) tutorial.

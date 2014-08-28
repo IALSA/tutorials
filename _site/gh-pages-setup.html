@@ -10,7 +10,7 @@
 
 
 
-<title>index</title>
+<title>Preparing for publishing with GitHub Pages</title>
 
 <script src="libs/jquery-1.11.0/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -156,14 +156,64 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </div>
 
 <div id="header">
-<h1 class="title">index</h1>
+<h1 class="title">Preparing for publishing with GitHub Pages</h1>
 </div>
 
 
-<hr />
-<div id="rrr-tutorials" class="section level3">
-<h3>RRR tutorials</h3>
-<p>Hello and welcome to the tutorials on Reproducible Research with R.<br />Start with <a href="./work-station-setup/work-station-setup.html">installation</a> tutorial.</p>
+<p>At the end of discussing how to produce <code>HTML</code> documents from <code>.Rmd</code> the official page of the <code>rmarkdown</code> package mentions that entire website can be produced using R Markdown and the described methodology.</p>
+<p>To create a website like <a href="rmarkdown.rstudio.com">rmarkdown.rstudio.com</a> can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of preparations needed to <strong>publish a statitic website on GitHub</strong>.</p>
+<div id="github-pages-help" class="section level3">
+<h3>GitHub Pages Help</h3>
+<p>To organize the process of learning new concepts and terminology the reader is directed to <a href="https://help.github.com/categories/20/articles">GitHub Pages Help</a>. I will be moving through this reference articles in order, installing the components as needed.</p>
+<div id="user-organization" class="section level4">
+<h4>User &amp; Organization</h4>
+<ul>
+<li>User - person</li>
+<li>Organization - lab</li>
+<li>Project - publication</li>
+</ul>
+</div>
+</div>
+<div id="creating-pages-with-the-automatic-generator" class="section level3">
+<h3>Creating Pages with the automatic generator</h3>
+<p>impressions so far: - limiting: - has to go throw creating every time - can’t figure out how add pages to gh-pages branch - clunky</p>
+</div>
+<div id="installing-jekyll" class="section level3">
+<h3>Installing Jekyll</h3>
+<ol style="list-style-type: decimal">
+<li>Ruby A. Installation
+<ul>
+<li>Installing Ruby for Windows using <a href="https://www.ruby-lang.org/en/installation/#rubyinstaller">RubyInstaller</a></li>
+<li>version: <strong>Ruby 1.9.3-p545</strong></li>
+<li>installation directory: <code>C:193</code></li>
+<li>check <strong>Add Ruby executables to your PATH</strong> box, I checked all B. Developmental Kit</li>
+<li>tdm-32-4.5.2</li>
+</ul></li>
+<li>Bundler</li>
+</ol>
+<ul>
+<li>Open there local GitHub folder</li>
+<li>Initiate command line by typing <code>cmd</code> in the address bar of the File Explorer</li>
+<li>type in <code>gem install bundler</code> in the command line
+<ul>
+<li>the text should say that the 1 gem has been installed</li>
+</ul></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Jekyll</li>
+</ol>
+<ul>
+<li>created a text file <code>Gemfile.txt</code> in the root of the repository</li>
+<li><p>the content of the file is</p>
+<pre><code>source &#39;https://rubygems.org&#39;
+gem &#39;github-pages&#39;</code></pre></li>
+<li><p>renamed <code>Gemfile.txt</code> into <code>Gemfile</code></p></li>
+</ul>
+</div>
+<div id="setting-up-tutorials-website" class="section level3">
+<h3>Setting up “Tutorials” website</h3>
+<p>The following will state the account of how <strong>tutorials</strong> website was created.</p>
+<p>Get to the <strong>gh-pages</strong> branch of the <a href="rmarkdown.rstudio.com">rmarkdown</a>(<a href="https://github.com/rstudio/rmarkdown/tree/gh-pages">https://github.com/rstudio/rmarkdown/tree/gh-pages</a>) GitHub repository. Into the root of your project’s <em>gh-pages</em> branch copy the following: - folder <strong>libs</strong> containing style libraries - folder <strong>include</strong> containing header and footer for the website - file <code>Makefile</code> - clarify the function - file <code>_output.yaml</code> - defining the common output options for .Rmd files</p>
 </div>
 
 

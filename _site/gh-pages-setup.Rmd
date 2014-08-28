@@ -1,0 +1,96 @@
+At the end of discussing how to produce <code>HTML</code> documents from <code>.Rmd</code> the official page of the <code>rmarkdown</code> package mentions that entire website can be produced using R Markdown and the described methodology. 
+
+To create a website like [rmarkdown.rstudio.com](rmarkdown.rstudio.com) can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of preparations needed to **publish a statitic website on GitHub**.
+
+
+### GitHub Pages Help
+
+To organize the process of learning new concepts and terminology the reader is directed to [GitHub Pages Help](https://help.github.com/categories/20/articles). I will be moving through this reference articles in order, installing the components as needed.
+
+
+
+#### User & Organization  
+  - User - person
+  - Organization - lab
+  - Project - publication
+  
+### Creating Pages with the automatic generator
+  impressions so far:
+  -  limiting:
+    - has to go throw creating every time
+    - can't figure out how add pages to gh-pages branch
+  - clunky
+  
+  
+### Installing Jekyll
+
+1. Ruby
+  A. Installation
+    - Installing Ruby for Windows using [RubyInstaller](https://www.ruby-lang.org/en/installation/#rubyinstaller)
+    - version: **Ruby 1.9.3-p545**
+    - installation directory: <code>C:\Ruby193</code>
+    - check **Add Ruby executables to your PATH** box, I checked all
+  B. Developmental Kit
+    - tdm-32-4.5.2
+    
+2. Bundler
+  - Open there local GitHub folder
+  - Initiate command line by typing <code>cmd</code> in the address bar of the File Explorer
+  - type in <code>gem install bundler</code> in the command line
+    - the text should say that the 1 gem has been installed
+  
+3. Jekyll
+  - created a text file <code>Gemfile.txt</code> in the root of the repository
+  - the content of the file is
+```
+source 'https://rubygems.org'
+gem 'github-pages'
+```
+  - renamed <code>Gemfile.txt</code> into <code>Gemfile</code>
+  
+### Setting up "Tutorials" website 
+
+The following will state the account of how **tutorials** website was created.
+
+Get to the **gh-pages** branch of the [rmarkdown](rmarkdown.rstudio.com)(https://github.com/rstudio/rmarkdown/tree/gh-pages) GitHub repository.
+Into the root of your project's _gh-pages_ branch copy the following:
+  - folder **libs** containing style libraries
+  - folder **include** containing header and footer for the website
+  - file <code>Makefile</code> - clarify the function
+  - file <code>_output.yaml</code> - defining the common output options for .Rmd files
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

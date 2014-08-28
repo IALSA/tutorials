@@ -1,0 +1,8 @@
+---
+title: "Preparing your work station for dynamic reporting"
+---
+
+Follow these check points to ensure the consistency of work statition setup
+
+## Install MiKTeX
+Download and install [MiXTex](http://miktex.org/download), may take a while.
