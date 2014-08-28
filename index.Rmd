@@ -6,9 +6,13 @@ title: "IALSA tutorials homepage"
 
 ### Welcome 
 
-Hello and welcome to the tutorials on Reproducible Research with R (RRR).  This website offers a series of tutorials and reference materials on implementing reproducible solution in research using the environment of [RStudio](rstudio.com)
+Hello and welcome to the tutorials on Reproducible Research with R (RRR).  
 </br>
 
+This website offers a series of guides and tutorials on reproducible research with [RStudio](rstudio.com).
 
-Start with [installation](./work-station-setup.html) tutorial.
+
+
+
+
 

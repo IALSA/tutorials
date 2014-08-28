@@ -1,7 +1,14 @@
 ***
 
-### RRR tutorials
+### Welcome 
 
-Hello and welcome to the tutorials on Reproducible Research with R.  
-Start with [installation](./work-station-setup/work-station-setup.html) tutorial.
+Hello and welcome to the tutorials on Reproducible Research with R (RRR).  
+</br>
+
+This website offers a series of guides and tutorials on reproducible research with [RStudio](rstudio.com).
+
+
+
+
+
 
