@@ -24,7 +24,7 @@ for( pathRmd in buildthese ) {
                       #                       ,"md_document"
                       "html_document"
                     ),
-                    output_dir = "./" ,
+#                     output_dir = "./" ,
                     #                     output_file=pathMd,
                     clean=TRUE)
 }
