@@ -12,6 +12,9 @@ To create a website like [rmarkdown.rstudio.com](rmarkdown.rstudio.com) can be a
 
 To organize the process of learning new concepts and terminology the reader is directed to [GitHub Pages Help](https://help.github.com/categories/20/articles). I will be moving through this reference articles in order, installing the components as needed.
 
+### Account of
+The following will state the account of how **tutorials** webpage was created.
+
 
 #### User & Organization  
   - User - person
@@ -53,7 +56,3 @@ gem 'github-pages'
   - renamed <code>Gemfile.txt</code> into <code>Gemfile</code>
   
   
-### Running Jekyll
-  1. On GitHub, in the root of the repository, created a new branch "gh-pages" from master branch.
-    - in Git for Windows, synced, created "gh-pages", and published repository
-    
