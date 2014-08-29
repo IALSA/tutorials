@@ -10,7 +10,7 @@
 
 
 
-<title>Preparing for publishing with GitHub Pages</title>
+<title>Publishing this website</title>
 
 <script src="libs/jquery-1.11.0/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -182,64 +182,112 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </div>
 
 <div id="header">
-<h1 class="title">Preparing for publishing with GitHub Pages</h1>
+<h1 class="title">Publishing this website</h1>
 </div>
 
-
-<p>At the end of discussing how to produce <code>HTML</code> documents from <code>.Rmd</code> the official page of the <code>rmarkdown</code> package mentions that entire website can be produced using R Markdown and the described methodology.</p>
-<p>To create a website like <a href="rmarkdown.rstudio.com">rmarkdown.rstudio.com</a> can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of preparations needed to <strong>publish a statitic website on GitHub</strong>.</p>
-<div id="github-pages-help" class="section level3">
-<h3>GitHub Pages Help</h3>
-<p>To organize the process of learning new concepts and terminology the reader is directed to <a href="https://help.github.com/categories/20/articles">GitHub Pages Help</a>. I will be moving through this reference articles in order, installing the components as needed.</p>
-<div id="user-organization" class="section level4">
-<h4>User &amp; Organization</h4>
+<div id="TOC">
 <ul>
-<li>User - person</li>
-<li>Organization - lab</li>
-<li>Project - publication</li>
+<li><a href="#starting-point">Starting Point</a></li>
+<li><a href="#jekyll">Jekyll</a></li>
+<li><a href="#github-pages">GitHub Pages</a></li>
+<li><a href="#producing-the-website">Producing the website</a></li>
+<li><a href="#disqus">Disqus</a></li>
 </ul>
 </div>
+
+<p>At the end of <a href="http://rmarkdown.rstudio.com/html_document_format.html#creating-a-website">discussion</a> on how to produce <code>HTML</code> documents from <code>.Rmd</code> the official page of the <code>rmarkdown</code> package mentions that entire website can be produced using R Markdown and the described methodology.</p>
+<p>Creating a website similar to <a href="rmarkdown.rstudio.com">rmarkdown.rstudio.com</a> can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of of <strong>publishing a statitic, blog aware website from a GitHub repository</strong> contain multiple <strong>.Rmd</strong> files, united by common attributes in the <code><em>output.yaml</em></code> file.</p>
+<div id="starting-point" class="section level2">
+<h2>Starting Point</h2>
+<p>To organize the process of learning new concepts and terminology the reader I started with <a href="https://help.github.com/categories/20/articles">GitHub Pages Help</a>. There is a difference between producing a website for a user or organization, and the a website for a specific project. One can use an <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">Automatic Page Generator</a>, but from my understanding so far the limitations of this approach might be substantial. </br> TODO: see if you can edit HTML code from the browser in GitHub</p>
 </div>
-<div id="creating-pages-with-the-automatic-generator" class="section level3">
-<h3>Creating Pages with the automatic generator</h3>
-<p>impressions so far: - limiting: - has to go throw creating every time - can’t figure out how add pages to gh-pages branch - clunky</p>
-</div>
-<div id="installing-jekyll" class="section level3">
-<h3>Installing Jekyll</h3>
+<div id="jekyll" class="section level2">
+<h2>Jekyll</h2>
 <ol style="list-style-type: decimal">
-<li>Ruby A. Installation
+<li>Ruby<br /></li>
+</ol>
+<ul>
+<li>Installation
 <ul>
 <li>Installing Ruby for Windows using <a href="https://www.ruby-lang.org/en/installation/#rubyinstaller">RubyInstaller</a></li>
 <li>version: <strong>Ruby 1.9.3-p545</strong></li>
-<li>installation directory: <code>C:193</code></li>
-<li>check <strong>Add Ruby executables to your PATH</strong> box, I checked all B. Developmental Kit</li>
-<li>tdm-32-4.5.2</li>
+<li>check <strong>Add Ruby executables to your PATH</strong> box, I checked all</li>
 </ul></li>
-<li>Bundler</li>
-</ol>
+<li>Developmental Kit
 <ul>
-<li>Open there local GitHub folder</li>
-<li>Initiate command line by typing <code>cmd</code> in the address bar of the File Explorer</li>
-<li>type in <code>gem install bundler</code> in the command line
-<ul>
-<li>the text should say that the 1 gem has been installed</li>
+<li>tdm-32-4.5.2</li>
+<li>I unpacked the zip into folder <code>DevKit</code> inside the folder where Ruby was installed.</li>
 </ul></li>
 </ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Bundler<br /></li>
+</ol>
+<ul>
+<li>Open there local GitHub folder<br /></li>
+<li>Initiate command line by typing <code>cmd</code> in the address bar of the File Explorer<br /></li>
+<li>type in <code>gem install bundler</code> in the command line<br /></li>
+<li>the text should say that the 1 gem has been installed</li>
+</ul>
 <ol start="3" style="list-style-type: decimal">
-<li>Jekyll</li>
+<li>Jekyll<br /></li>
 </ol>
 <ul>
 <li>created a text file <code>Gemfile.txt</code> in the root of the repository</li>
 <li><p>the content of the file is</p>
 <pre><code>source &#39;https://rubygems.org&#39;
 gem &#39;github-pages&#39;</code></pre></li>
-<li><p>renamed <code>Gemfile.txt</code> into <code>Gemfile</code></p></li>
+<li>renamed <code>Gemfile.txt</code> into <code>Gemfile</code></li>
+<li><p>run command line <code>bundle install</code></p></li>
 </ul>
 </div>
-<div id="setting-up-tutorials-website" class="section level3">
-<h3>Setting up “Tutorials” website</h3>
-<p>The following will state the account of how <strong>tutorials</strong> website was created.</p>
-<p>Get to the <strong>gh-pages</strong> branch of the <a href="rmarkdown.rstudio.com">rmarkdown</a>(<a href="https://github.com/rstudio/rmarkdown/tree/gh-pages">https://github.com/rstudio/rmarkdown/tree/gh-pages</a>) GitHub repository. Into the root of your project’s <em>gh-pages</em> branch copy the following: - folder <strong>libs</strong> containing style libraries - folder <strong>include</strong> containing header and footer for the website - file <code>Makefile</code> - clarify the function - file <code>_output.yaml</code> - defining the common output options for .Rmd files</p>
+<div id="github-pages" class="section level2">
+<h2>GitHub Pages</h2>
+<ul>
+<li>Get to the <strong>gh-pages</strong> branch of the <a href="https://github.com/rstudio/rmarkdown/tree/gh-pages">rmarkdown</a> GitHub repository (you should be there anyway)</li>
+</ul>
+<p>Into the root of your project’s <em>gh-pages</em> branch copy the following: - folder <strong>libs</strong> containing style libraries - folder <strong>include</strong> containing header and footer for the website - file <code>Makefile</code> - clarify the function - file <code>_output.yaml</code> - defining the common output options for .Rmd files</p>
+</div>
+<div id="producing-the-website" class="section level2">
+<h2>Producing the website</h2>
+<p>At this point the website is a collection of .Rmd files stored in a single repository. Their output attributes are shared and controlled by <code>output.yaml</code> in the root. To produce the website execute the following steps:</p>
+<ol style="list-style-type: decimal">
+<li>Run “produceReports.R” scripts that prints HTML from all .Rdm files. For example:</li>
+</ol>
+<pre><code>path_index&lt;- base::file.path(&quot;./index.Rmd&quot;)
+path_ghPages&lt;- base::file.path(&quot;./gh-pages-setup.Rmd&quot;)
+path_workStation&lt;- base::file.path(&quot;./work-station-setup.Rmd&quot;)
+
+buildthese&lt;- c(path_index, path_ghPages,path_workStation)
+
+for( pathRmd in buildthese ) {
+  rmarkdown::render(input = pathRmd,output_format=c(&quot;html_document&quot;), clean=TRUE)
+}</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Open command line from the repository’s root and execute</p>
+<pre><code>bunlde exec jekyll serve</code></pre>
+<p>This will assemble the website and deploy it to the local host. Examine it at</p>
+<pre><code>localhost:4000</code></pre></li>
+<li><p>Commit and sync the changes in the gh-pages branch. The website should become availible at</p>
+<pre><code>username.github.io/projectname</code></pre>
+<p>or a custom address.</p></li>
+</ol>
+<p>To change the website one must repeat these steps after intriducing changes in the initial .Rmd files</p>
+</div>
+<div id="disqus" class="section level2">
+<h2>Disqus</h2>
+<ol style="list-style-type: decimal">
+<li><p>Register an account with <a href="disqus.com">Disqus</a> if you haven’t already.</p></li>
+<li><p>when logged in go to Settings got Admin area</p></li>
+<li><p>Click on the drop-down button and select “Add new site”</p></li>
+<li><p>Enter the names of your blog, that will be hosted on disqus servers.</p></li>
+<li>After completing the registration the promt will take you to the page containing code snippets you have to add to your website to enable the comments</li>
+</ol>
+<ul>
+<li>copy the snippets into appropriate places in the file <strong>./include/after_body.html</strong></li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li>Re-run the steps 1-3 from the previous subsection. The comments should be enabled now.</li>
+</ol>
 </div>
 
 
@@ -269,10 +317,10 @@ $(document).ready(function () {
 </script>
 
 <!-- disqus -->
-  <div id="disqus_thread"></div>
+         <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'rmarkdown'; // required: replace example with your forum shortname
+        var disqus_shortname = 'ialsatutorials'; // required: replace example with your forum shortname
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
@@ -283,6 +331,19 @@ $(document).ready(function () {
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ialsatutorials'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
 
 </div>
 

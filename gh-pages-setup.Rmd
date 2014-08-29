@@ -1,50 +1,42 @@
 ---
-title: "Preparing for publishing with GitHub Pages"
-output: html_document
+title: "Publishing this website"
+output:
+  html_document:
+    toc: yes
 ---
 
-At the end of discussing how to produce <code>HTML</code> documents from <code>.Rmd</code> the official page of the <code>rmarkdown</code> package mentions that entire website can be produced using R Markdown and the described methodology. 
+At the end of [discussion](http://rmarkdown.rstudio.com/html_document_format.html#creating-a-website) on how to produce <code>HTML</code> documents from <code>.Rmd</code> the official page of the <code>rmarkdown</code> package mentions that entire website can be produced using R Markdown and the described methodology. 
 
-To create a website like [rmarkdown.rstudio.com](rmarkdown.rstudio.com) can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of preparations needed to **publish a statitic website on GitHub**.
-
-
-### GitHub Pages Help
-
-To organize the process of learning new concepts and terminology the reader is directed to [GitHub Pages Help](https://help.github.com/categories/20/articles). I will be moving through this reference articles in order, installing the components as needed.
+Creating a website similar to [rmarkdown.rstudio.com](rmarkdown.rstudio.com) can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of of **publishing a statitic, blog aware website from a GitHub repository** contain multiple **.Rmd** files, united by common attributes in the <code>_output.yaml_</code> file.
 
 
+## Starting Point
 
-#### User & Organization  
-  - User - person
-  - Organization - lab
-  - Project - publication
+To organize the process of learning new concepts and terminology the reader I started with  [GitHub Pages Help](https://help.github.com/categories/20/articles). There is a difference between producing a website for a user or organization, and the a website for a specific project. One can use an  [Automatic Page Generator](https://help.github.com/articles/creating-pages-with-the-automatic-generator), but from my understanding so far the limitations of this approach might be substantial. 
+</br>
+TODO: see if you can edit HTML code from the browser in GitHub 
+
+    
   
-### Creating Pages with the automatic generator
-  impressions so far:
-  -  limiting:
-    - has to go throw creating every time
-    - can't figure out how add pages to gh-pages branch
-  - clunky
-  
-  
-### Installing Jekyll
+## Jekyll
 
-1. Ruby
-  A. Installation
+1. Ruby  
+  - Installation
     - Installing Ruby for Windows using [RubyInstaller](https://www.ruby-lang.org/en/installation/#rubyinstaller)
     - version: **Ruby 1.9.3-p545**
-    - installation directory: <code>C:\Ruby193</code>
     - check **Add Ruby executables to your PATH** box, I checked all
-  B. Developmental Kit
-    - tdm-32-4.5.2
     
-2. Bundler
-  - Open there local GitHub folder
-  - Initiate command line by typing <code>cmd</code> in the address bar of the File Explorer
-  - type in <code>gem install bundler</code> in the command line
-    - the text should say that the 1 gem has been installed
+  - Developmental Kit
+    - tdm-32-4.5.2
+    - I unpacked the zip into folder <code>DevKit</code> inside the folder where Ruby was installed.  
+    
+2. Bundler  
+  - Open there local GitHub folder  
+  - Initiate command line by typing <code>cmd</code> in the address bar of the File Explorer  
+  - type in <code>gem install bundler</code> in the command line  
+  - the text should say that the 1 gem has been installed  
   
-3. Jekyll
+3. Jekyll  
   - created a text file <code>Gemfile.txt</code> in the root of the repository
   - the content of the file is
 ```
@@ -52,20 +44,70 @@ source 'https://rubygems.org'
 gem 'github-pages'
 ```
   - renamed <code>Gemfile.txt</code> into <code>Gemfile</code>
+  - run command line <code>bundle install</code>
   
-### Setting up "Tutorials" website 
+## GitHub Pages
 
-The following will state the account of how **tutorials** website was created.
 
-Get to the **gh-pages** branch of the [rmarkdown](rmarkdown.rstudio.com)(https://github.com/rstudio/rmarkdown/tree/gh-pages) GitHub repository.
+  - Get to the **gh-pages** branch of the [rmarkdown](https://github.com/rstudio/rmarkdown/tree/gh-pages) GitHub repository (you should be there anyway)
+
 Into the root of your project's _gh-pages_ branch copy the following:
   - folder **libs** containing style libraries
   - folder **include** containing header and footer for the website
   - file <code>Makefile</code> - clarify the function
   - file <code>_output.yaml</code> - defining the common output options for .Rmd files
   
+## Producing the website
+
+At this point the website is a collection of .Rmd files stored in a single repository. Their output attributes are shared and controlled by <code>output.yaml</code> in the root.  To produce the website execute the following steps:
+
+1. Run "produceReports.R" scripts that  prints HTML from all .Rdm files. For example:  
+
+```
+path_index<- base::file.path("./index.Rmd")
+path_ghPages<- base::file.path("./gh-pages-setup.Rmd")
+path_workStation<- base::file.path("./work-station-setup.Rmd")
+
+buildthese<- c(path_index, path_ghPages,path_workStation)
+
+for( pathRmd in buildthese ) {
+  rmarkdown::render(input = pathRmd,output_format=c("html_document"), clean=TRUE)
+}
+```
+
+2. Open command line from the repository's root and execute
+```
+bunlde exec jekyll serve
+```
+This will assemble the website and deploy it to the local host. Examine it at
+```
+localhost:4000
+```
+
+3. Commit and sync the changes in the gh-pages branch. The website should become availible at 
+```
+username.github.io/projectname
+```
+or a custom address.
+
+To change the website one must repeat these steps after intriducing changes in the initial .Rmd files
+
+
+## Disqus
+
+1. Register an account with [Disqus](disqus.com) if you haven't already.
+
+2. when logged in go to Settings got Admin area 
+
+3. Click on the drop-down button and select "Add new site"
+
+4. Enter the names of your blog, that will be hosted on disqus servers.
+
+5. After completing the registration the promt will take you to the page containing code snippets you have to add to your website to enable the comments
+  - copy the snippets into appropriate places in the file **./include/after_body.html**
   
-  
+6. Re-run the steps 1-3 from the previous subsection. The comments should be enabled now.
+
   
   
   
