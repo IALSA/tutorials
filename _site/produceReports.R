@@ -2,8 +2,8 @@
 ########## Production of reports from .Rmd files ###
 #./Vignettes/Questions
 path_index<- base::file.path("./index.Rmd")
-path_ghPages<- base::file.path("./gh-pages-setup.Rmd")
-path_workStation<- base::file.path("./work-station-setup.Rmd")
+# path_ghPages<- base::file.path("./gh-pages-setup.Rmd")
+# path_workStation<- base::file.path("./work-station-setup.Rmd")
 
 
 
