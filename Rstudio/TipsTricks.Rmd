@@ -1,0 +1,10 @@
+---
+title: "Tips and Tricks"
+author: "Andrey Koval"
+date: "Thursday, September 11, 2014"
+output: html_document
+---
+
+## Usefule short-cuts
+
+<code>Ctrl + L</code> - Cleans the console 
