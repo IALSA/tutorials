@@ -1,0 +1,14 @@
+---
+title: "Tips and Tricks"
+author: "Andrey Koval"
+date: "Thursday, September 11, 2014"
+output: html_document
+---
+
+
+## Usefull shortcuts
+
+See the [complete set](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts) of shortcuts for RStudio.  
+
+For a quick reference in RStudio press <code>Alt + Shift + K</code>
+
