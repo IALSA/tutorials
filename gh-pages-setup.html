@@ -170,6 +170,8 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
                <li><a href="blank.html">RShiny</a></li>
                <li><a href="blank.html">Web development</a></li>
                <li><a href="blank.html">Adobe CC</a></li>
+             <li class="nav-header">General Reference</li>
+               <li><a href="tips-and-tricks.html">Basic install</a></li>
             </ul>
           </li>          
           
@@ -218,36 +220,44 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li>check <strong>Add Ruby executables to your PATH</strong> box, I checked all</li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
-<li>Download Developmental Kit(<strong>DevKit</strong>) from the Ruby’s <a href="https://github.com/postmodern/ruby-install">download</a> page
+<li>Download Developmental Kit(<strong>DevKit</strong>) from the Ruby’s <a href="https://github.com/postmodern/ruby-install">download</a> page</li>
+</ol>
 <ul>
 <li>I used version: tdm-32-4.5.2</li>
 <li>Unpack zip into folder <code>DevKit</code> inside the folder where Ruby was installed.<br /></li>
-<li>follow the <a href="https://github.com/oneclick/rubyinstaller/wiki/Development-kit">guide</a> to properly instlall the kit.</br><br />In brief:<br /></li>
-</ul>
+<li>follow the <a href="https://github.com/oneclick/rubyinstaller/wiki/Development-kit">guide</a> to properly instlall the kit.</br><br />In brief:
 <ol style="list-style-type: lower-alpha">
 <li>Open the folder wher DevKit was unzipped<br /> <code>cd c:\Ruby193\DevKit</code><br /></li>
 <li><p>Generate <code>config.yml</code> file<br /> <code>ruby dk.rb init</code><br /> and edit it (optional) to add or remove Rubies.</p></li>
-<li><p>Finally, enhance your Rubies with DevKit:<br /> <code>ruby dk.rb install</code></p></li>
+<li>Finally, enhance your Rubies with DevKit:<br /> <code>ruby dk.rb install</code><br /></li>
+<li><p>Test installation</p>
+<pre><code>gem install json --platform=ruby</code></pre>
+<p>you should see “with native extensions”&quot; in the screen messages. To confirm that the json gem is working, run:</p>
+<pre><code>ruby -rubygems -e &quot;require &#39;json&#39;; puts JSON.load(&#39;[42]&#39;).inspect&quot;</code></pre></li>
 </ol></li>
-<li>Bundler<br /></li>
-</ol>
-<ul>
-<li>Open local GitHub folder<br /></li>
-<li>Initiate command line by typing <code>cmd</code> in the address bar of the File Explorer<br /></li>
-<li>type in <code>gem install bundler</code> in the command line<br /></li>
-<li>the text should say that the 1 gem has been installed</li>
 </ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Jekyll<br /></li>
-</ol>
+</div>
+<div id="bundler" class="section level3">
+<h3>Bundler</h3>
+<ol style="list-style-type: lower-alpha">
+<li>Open the local GitHub folder<br /></li>
+<li>Initiate command prompt by typing <code>cmd</code> in the address bar of the File Explorer<br /></li>
+<li>type in <code>gem install bundler</code> in the command line
 <ul>
+<li>the text should say that the 1 gem has been installed</li>
+</ul></li>
+</ol>
+</div>
+<div id="jekyll-1" class="section level3">
+<h3>Jekyll</h3>
+<ol style="list-style-type: lower-alpha">
 <li>created a text file <code>Gemfile.txt</code> in the root of the repository</li>
 <li><p>the content of the file is</p>
 <pre><code>source &#39;https://rubygems.org&#39;
 gem &#39;github-pages&#39;</code></pre></li>
 <li>renamed <code>Gemfile.txt</code> into <code>Gemfile</code> ### Bundle install<br /></li>
 <li><p>run command line <code>bundle install</code></p></li>
-</ul>
+</ol>
 </div>
 </div>
 <div id="github-pages" class="section level2">

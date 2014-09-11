@@ -2,13 +2,14 @@
 ########## Production of reports from .Rmd files ###
 #./Vignettes/Questions
 path_index<- base::file.path("./index.Rmd")
-# path_ghPages<- base::file.path("./gh-pages-setup.Rmd")
-# path_workStation<- base::file.path("./work-station-setup.Rmd")
+path_ghPages<- base::file.path("./gh-pages-setup.Rmd")
+path_workStation<- base::file.path("./work-station-setup.Rmd")
+path_TipsTricks <- base::file.path("./tips-and-tricks.Rmd")
 
 
 
 #  Define groups of reports 
-allReports<- c(path_index, path_ghPages,path_workStation  )
+allReports<- c(path_index, path_ghPages,path_workStation,path_TipsTricks)
 # Place report paths HERE ###########
 buildthese <- (allReports) ##########
 ####################################

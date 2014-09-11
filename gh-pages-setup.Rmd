@@ -57,21 +57,21 @@ ruby -rubygems -e "require 'json'; puts JSON.load('[42]').inspect"
 
  
 ### Bundler  
-  a. Open local GitHub folder  
-  b. Initiate command line by typing <code>cmd</code> in the address bar of the File Explorer  
-  - type in <code>gem install bundler</code> in the command line  
-  - the text should say that the 1 gem has been installed  
+  a. Open the local GitHub folder  
+  b. Initiate command prompt by typing <code>cmd</code> in the address bar of the File Explorer  
+  c. type in <code>gem install bundler</code> in the command line  
+    - the text should say that the 1 gem has been installed  
   
-3. Jekyll  
-  - created a text file <code>Gemfile.txt</code> in the root of the repository
-  - the content of the file is
+### Jekyll  
+  a. created a text file <code>Gemfile.txt</code> in the root of the repository
+  b. the content of the file is
 ```
 source 'https://rubygems.org'
 gem 'github-pages'
 ```
-  - renamed <code>Gemfile.txt</code> into <code>Gemfile</code>
+  c. renamed <code>Gemfile.txt</code> into <code>Gemfile</code>
  ### Bundle install  
-  - run command line <code>bundle install</code>
+  d. run command line <code>bundle install</code>
     
 ## GitHub Pages
 

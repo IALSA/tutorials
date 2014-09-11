@@ -5,7 +5,7 @@ Creating a website similar to [rmarkdown.rstudio.com](rmarkdown.rstudio.com) can
 
 ## Starting Point
 
-To organize the process of learning new concepts and terminology the reader I started with  [GitHub Pages Help](https://help.github.com/categories/20/articles). There is a difference between producing a website for a user or organization, and the a website for a specific project. One can use an  [Automatic Page Generator](https://help.github.com/articles/creating-pages-with-the-automatic-generator), but from my understanding so far the limitations of this approach might be substantial. 
+To organize the process of learning new concepts and terminology we start with  [GitHub Pages Help](https://help.github.com/categories/20/articles). There is a difference between producing a website for a user or organization, and the a website for a specific project. One can use an  [Automatic Page Generator](https://help.github.com/articles/creating-pages-with-the-automatic-generator), but from my understanding so far the limitations of this approach might be substantial. 
 </br>
 TODO: see if you can edit HTML code from the browser in GitHub 
 
@@ -13,32 +13,59 @@ TODO: see if you can edit HTML code from the browser in GitHub
   
 ## Jekyll
 
-1. Ruby  
-  - Installation
-    - Installing Ruby for Windows using [RubyInstaller](https://www.ruby-lang.org/en/installation/#rubyinstaller)
-    - version: **Ruby 1.9.3-p545**
-    - check **Add Ruby executables to your PATH** box, I checked all
-    
-  - Developmental Kit
-    - tdm-32-4.5.2
-    - I unpacked the zip into folder <code>DevKit</code> inside the folder where Ruby was installed.  
-    
-2. Bundler  
-  - Open there local GitHub folder  
-  - Initiate command line by typing <code>cmd</code> in the address bar of the File Explorer  
-  - type in <code>gem install bundler</code> in the command line  
-  - the text should say that the 1 gem has been installed  
+Setting up Jekyll publishing requires a serveral preliminary  installations. 
+
+### Ruby  
+  1. Install **Ruby** for Windows using [RubyInstaller](https://www.ruby-lang.org/en/installation/#rubyinstaller)  
+  - I used version: **Ruby 1.9.3-p545**
+  - check **Add Ruby executables to your PATH** box, I checked all
+
+  2. Download Developmental Kit(**DevKit**) from the Ruby's [download](https://github.com/postmodern/ruby-install) page
+  - I used version: tdm-32-4.5.2
+  - Unpack zip into folder <code>DevKit</code> inside the folder where Ruby was installed.  
+  - follow the [guide](https://github.com/oneclick/rubyinstaller/wiki/Development-kit) to properly instlall the kit.</br>   
+In brief:  
+    a. Open the folder wher DevKit was unzipped  
+ ```
+  cd c:\Ruby193\DevKit 
+ ```  
+    b. Generate <code>config.yml</code> file  
+ ```
+ ruby dk.rb init
+ ```  
+ and edit it (optional) to add or remove Rubies. 
+ 
+    c. Finally, enhance your Rubies with DevKit:  
+ ```
+ ruby dk.rb install
+ ```  
+    d. Test installation 
+```
+gem install json --platform=ruby
+```  
+you should see "with native extensions"" in the screen messages. To confirm that the json gem is working, run:
+```
+ruby -rubygems -e "require 'json'; puts JSON.load('[42]').inspect"
+```  
+
+ 
+### Bundler  
+  a. Open the local GitHub folder  
+  b. Initiate command prompt by typing <code>cmd</code> in the address bar of the File Explorer  
+  c. type in <code>gem install bundler</code> in the command line  
+    - the text should say that the 1 gem has been installed  
   
-3. Jekyll  
-  - created a text file <code>Gemfile.txt</code> in the root of the repository
-  - the content of the file is
+### Jekyll  
+  a. created a text file <code>Gemfile.txt</code> in the root of the repository
+  b. the content of the file is
 ```
 source 'https://rubygems.org'
 gem 'github-pages'
 ```
-  - renamed <code>Gemfile.txt</code> into <code>Gemfile</code>
-  - run command line <code>bundle install</code>
-  
+  c. renamed <code>Gemfile.txt</code> into <code>Gemfile</code>
+ ### Bundle install  
+  d. run command line <code>bundle install</code>
+    
 ## GitHub Pages
 
 
