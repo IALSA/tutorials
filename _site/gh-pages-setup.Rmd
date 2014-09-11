@@ -13,7 +13,7 @@ TODO: see if you can edit HTML code from the browser in GitHub
   
 ## Jekyll
 
-Setting up Jekyll publishing requires a serveral preliminary  installations. 
+To set up Jekyll publishing  you will need a few things:  
 
 ### Ruby  
   1. Install **Ruby** for Windows using [RubyInstaller](https://www.ruby-lang.org/en/installation/#rubyinstaller)  
@@ -26,20 +26,20 @@ Setting up Jekyll publishing requires a serveral preliminary  installations.
   - follow the [guide](https://github.com/oneclick/rubyinstaller/wiki/Development-kit) to properly instlall the kit.</br>   
 In brief:  
     a. Open the folder wher DevKit was unzipped  
- ```
+```
   cd c:\Ruby193\DevKit 
- ```  
-    b. Generate <code>config.yml</code> file  
- ```
+```  
+    b. Generate <code>config.yml</code> file:    
+```
  ruby dk.rb init
- ```  
+```  
  and edit it (optional) to add or remove Rubies. 
  
-    c. Finally, enhance your Rubies with DevKit:  
- ```
+    c. Finally, enhance your Rubies with DevKit:   
+```
  ruby dk.rb install
- ```  
-    d. Test installation 
+```  
+    d. Test installation: 
 ```
 gem install json --platform=ruby
 ```  
@@ -67,15 +67,17 @@ gem 'github-pages'
   d. run command line <code>bundle install</code>
     
 ## GitHub Pages
+ Here's i'm ripping off the styles and settings from the official website of [rmarkdown](https://github.com/rstudio/rmarkdown/tree/gh-pages).
 
+  a. Go to the **gh-pages** branch of the [rmarkdown](https://github.com/rstudio/rmarkdown/tree/gh-pages) GitHub repository (you may need to clone it to your machine if you haven't done so already)
 
-  - Get to the **gh-pages** branch of the [rmarkdown](https://github.com/rstudio/rmarkdown/tree/gh-pages) GitHub repository (you should be there anyway)
-
-Into the root of your project's _gh-pages_ branch copy the following:
-  - folder **libs** containing style libraries
-  - folder **include** containing header and footer for the website
-  - file <code>Makefile</code> - clarify the function
-  - file <code>_output.yaml</code> - defining the common output options for .Rmd files
+  b. Into the root of **your** project's _gh-pages_ branch, do copy the following:  
+    - folder **libs** containing style libraries
+    - folder **include** containing header and footer for the website
+    - file <code>Makefile</code> - clarify the function
+    - file <code>_output.yaml</code> - defining the common output options for .Rmd files     
+    In the future, these styles can be modified to fit the needs of the project. 
+    
   
 ## Producing the website
 

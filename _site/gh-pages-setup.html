@@ -6,6 +6,7 @@
 
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
 <meta name="generator" content="pandoc" />
 
 
@@ -108,7 +109,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
             <a href="setup" class="dropdown-toggle" data-toggle="dropdown">Setup <b class="caret"></b></a>
             <ul class="dropdown-menu">
                <li class="nav-header">Windows</li>
-               <li><a href="work-station-setup.html">Toolbox</a></li>
+               <li><a href="toolbox-install.html">Toolbox</a></li>
                <li><a href="gh-pages-setup.html">gh-pages</a></li>
               <li class="divider"></li>
               <li class="nav-header">iOS</li>
@@ -209,7 +210,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </div>
 <div id="jekyll" class="section level2">
 <h2>Jekyll</h2>
-<p>Setting up Jekyll publishing requires a serveral preliminary installations.</p>
+<p>To set up Jekyll publishing you will need a few things:</p>
 <div id="ruby" class="section level3">
 <h3>Ruby</h3>
 <ol style="list-style-type: decimal">
@@ -227,10 +228,14 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li>Unpack zip into folder <code>DevKit</code> inside the folder where Ruby was installed.<br /></li>
 <li>follow the <a href="https://github.com/oneclick/rubyinstaller/wiki/Development-kit">guide</a> to properly instlall the kit.</br><br />In brief:
 <ol style="list-style-type: lower-alpha">
-<li>Open the folder wher DevKit was unzipped<br /> <code>cd c:\Ruby193\DevKit</code><br /></li>
-<li><p>Generate <code>config.yml</code> file<br /> <code>ruby dk.rb init</code><br /> and edit it (optional) to add or remove Rubies.</p></li>
-<li>Finally, enhance your Rubies with DevKit:<br /> <code>ruby dk.rb install</code><br /></li>
-<li><p>Test installation</p>
+<li><p>Open the folder wher DevKit was unzipped</p>
+<pre><code>  cd c:\Ruby193\DevKit </code></pre></li>
+<li><p>Generate <code>config.yml</code> file:</p>
+<pre><code> ruby dk.rb init</code></pre>
+<p>and edit it (optional) to add or remove Rubies.</p></li>
+<li><p>Finally, enhance your Rubies with DevKit:</p>
+<pre><code> ruby dk.rb install</code></pre></li>
+<li><p>Test installation:</p>
 <pre><code>gem install json --platform=ruby</code></pre>
 <p>you should see “with native extensions”&quot; in the screen messages. To confirm that the json gem is working, run:</p>
 <pre><code>ruby -rubygems -e &quot;require &#39;json&#39;; puts JSON.load(&#39;[42]&#39;).inspect&quot;</code></pre></li>
@@ -262,10 +267,17 @@ gem &#39;github-pages&#39;</code></pre></li>
 </div>
 <div id="github-pages" class="section level2">
 <h2>GitHub Pages</h2>
+<p>Here’s i’m ripping off the styles and settings from the official website of <a href="https://github.com/rstudio/rmarkdown/tree/gh-pages">rmarkdown</a>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Go to the <strong>gh-pages</strong> branch of the <a href="https://github.com/rstudio/rmarkdown/tree/gh-pages">rmarkdown</a> GitHub repository (you may need to clone it to your machine if you haven’t done so already)</p></li>
+<li>Into the root of <strong>your</strong> project’s <em>gh-pages</em> branch, do copy the following:
 <ul>
-<li>Get to the <strong>gh-pages</strong> branch of the <a href="https://github.com/rstudio/rmarkdown/tree/gh-pages">rmarkdown</a> GitHub repository (you should be there anyway)</li>
-</ul>
-<p>Into the root of your project’s <em>gh-pages</em> branch copy the following: - folder <strong>libs</strong> containing style libraries - folder <strong>include</strong> containing header and footer for the website - file <code>Makefile</code> - clarify the function - file <code>_output.yaml</code> - defining the common output options for .Rmd files</p>
+<li>folder <strong>libs</strong> containing style libraries</li>
+<li>folder <strong>include</strong> containing header and footer for the website</li>
+<li>file <code>Makefile</code> - clarify the function</li>
+<li>file <code>_output.yaml</code> - defining the common output options for .Rmd files<br />In the future, these styles can be modified to fit the needs of the project.</li>
+</ul></li>
+</ol>
 </div>
 <div id="producing-the-website" class="section level2">
 <h2>Producing the website</h2>
