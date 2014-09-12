@@ -1,16 +1,13 @@
 ---
 title: "Drawing lines"
-output:
-  html_document:
-    fig.retina: 2
-
+output: html_document
 ---
 
 
 <!--  Set the working directory to the repository's base directory; this assumes the report is nested inside of only one directory.-->
 ```{r c1, echo=F, message=F} 
 require(knitr)
-opts_knit$set(root.dir='../')  #Don't combine this call with any other chunk -especially one that uses file paths.
+opts_knit$set(root.dir='../../')  #Don't combine this call with any other chunk -especially one that uses file paths.
 
 ```
 
@@ -37,7 +34,7 @@ options(width=120) #So the output is 50% wider than the default.
 ```
 
 ```{r DeclareGlobals, echo=echoChunks, message=FALSE}
-source(file.path(getwd(),"Example/AesDefine.R"))
+source(file.path(getwd(),"bits/drawing-lines/AesDefine.R"))
 
 pathDir<- getwd()
 ```
@@ -52,7 +49,7 @@ require(gridExtra)
 
 
 Data for a single person
-```{r c3, echo=F}
+```{r c3, echo=T}
 ds <- read.table(header = TRUE, text ="
 obs  id year attend
 1  47 2000      4
@@ -74,8 +71,20 @@ print(ds)
 
 ```
 
+Let's define a visual theme to keep graphs sharp, but consistent  
+```{r}
+plotTheme <- ggplot2::theme_bw() +
+ggplot2::theme_bw(base_size=baseSize)+
+ggplot2::theme(title=ggplot2::element_text(colour="gray20",size = 12)) +
+ggplot2::theme(axis.text=ggplot2::element_text(colour="gray40"))+
+ggplot2::theme(axis.title=ggplot2::element_text(colour="gray40"))+
+ggplot2::theme(panel.border = ggplot2::element_rect(colour="gray80"))+
+ggplot2::theme(axis.ticks.length = grid::unit(0, "cm"))
 
-```{r c4, echo=F}
+```
+
+
+```{r c4, echo=T}
 require(ggplot2)
 p<-ggplot(ds, aes(x=time,y=attend, color=idF))
 p<-p+ geom_line(color="purple",linetype=2, size=.5)
@@ -91,13 +100,7 @@ p<-p+ scale_x_continuous("Years since 2000",
 p<-p+ labs(title=paste0("In the past year, how often have you attended a worship service?"))
 p<- p + guides(color=guide_legend) 
 # themes
-p <- p + ggplot2::theme_bw()
-p <- p + ggplot2::theme_bw(base_size=baseSize)
-p <- p + ggplot2::theme(title=ggplot2::element_text(colour="gray20",size = 12)) 
-p <- p + ggplot2::theme(axis.text=ggplot2::element_text(colour="gray40"))
-p <- p + ggplot2::theme(axis.title=ggplot2::element_text(colour="gray40"))
-p <- p + ggplot2::theme(panel.border = ggplot2::element_rect(colour="gray80"))
-p <- p + ggplot2::theme(axis.ticks.length = grid::unit(0, "cm"))
+p <- p + plotTheme
 p
 ```
 

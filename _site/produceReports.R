@@ -5,7 +5,7 @@ path_index<- base::file.path("./index.Rmd")
 path_ghPages<- base::file.path("./gh-pages-setup.Rmd")
 path_toolbox<- base::file.path("./toolbox-install.Rmd")
 path_TipsTricks <- base::file.path("./tips-and-tricks.Rmd")
-
+path_DrawingLines <- base::file.path("./bits/drawing-lines/Drawing-lines.Rmd")
 
 
 #  Define groups of reports 
