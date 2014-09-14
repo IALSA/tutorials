@@ -1,4 +1,4 @@
-Reproducible research system rely on a collection of interrelated software tools, accord among which yield reliable reproduction and smooth pipeline. 
+Reproducible research system relies on a collection of interrelated software tools, accord among which yield reliable reproduction and smooth pipeline. 
 
 ### R
 

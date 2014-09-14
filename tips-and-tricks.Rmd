@@ -1,12 +1,11 @@
 ---
-title: "Tips and Tricks"
-author: "Andrey Koval"
-date: "Thursday, September 11, 2014"
 output: html_document
 ---
+Tips and Tricks
+===
+for working in RStudio
 
-
-## Usefull shortcuts
+### Usefull shortcuts
 
 See the [complete set](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts) of shortcuts for RStudio.  
 
