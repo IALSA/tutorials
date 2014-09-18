@@ -1,8 +1,0 @@
----
-title: "12-09-2014"
----
-
-
-```{r child, child = '../labLog/12-09-2014-Line-graphs-OCTO.html'}
-
-```
