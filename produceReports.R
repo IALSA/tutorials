@@ -8,11 +8,8 @@ path_index<- base::file.path("./index.Rmd")
 # path_DrawingLines <- base::file.path("./bits/drawing-lines/Drawing-lines.Rmd")
 # Lab Log
 path_12_09_2014 <- base::file.path("./12-09-2014.Rmd")
-<<<<<<< HEAD
 path_19_09_2014 <- base::file.path("./19-09-2014.Rmd")
 
-=======
->>>>>>> origin/gh-pages
 
 
 #  Define groups of reports 
