@@ -1,11 +1,2 @@
 ```{r child, child = './labLog/12-09-2014-Line-graphs-OCTO.html'}
-=======
-title: "Fri-12-Sep-2014: Drawing lines with OCTO data"
-layout: post
----
-
-
-```{r child, child = './labLog/12-09-2014-Line-graphs-OCTO_fragment.html'}
->>>>>>> origin/gh-pages
-
 ```
