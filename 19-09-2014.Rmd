@@ -2,6 +2,5 @@
 title: "12-09-2014"
 ---
 
-```{r child, child = './labLog/19-09-2014-From-Raw-to-Draw.html'}
-
+```{r child, child = './LabLog/19-09-2014-From-Raw-to-Draw.html'}
 ```
