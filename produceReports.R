@@ -9,9 +9,10 @@ path_DrawingLines <- base::file.path("./bits/drawing-lines/Drawing-lines.Rmd")
 # Lab Log
 path_12_09_2014 <- base::file.path("./12-09-2014.Rmd")
 path_19_09_2014 <- base::file.path("./19-09-2014.Rmd")
+path_26_09_2014 <- base::file.path("./26-09-2014.Rmd")
 
 #  Define groups of reports 
-labLogs <- c(path_12_09_2014, path_19_09_2014)
+labLogs <- c(path_26_09_2014)
 allReports<- c(path_index, path_ghPages,path_toolbox, path_TipsTricks)
 # Place report paths HERE ###########
 buildthese <- c(allReports, labLogs) ##########
