@@ -1,5 +1,5 @@
 ---
-title: "Publishing this website"
+title: "Publishing websites with RStudio and GitHub"
 output:
   html_document:
     toc: yes

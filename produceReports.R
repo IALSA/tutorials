@@ -15,7 +15,7 @@ path_26_09_2014 <- base::file.path("./26-09-2014.Rmd")
 labLogs <- c(path_26_09_2014)
 allReports<- c(path_index, path_ghPages,path_toolbox, path_TipsTricks)
 # Place report paths HERE ###########
-buildthese <- c(allReports ##########
+buildthese <- c(allReports) ##########
 # buildthese <- c( labLogs)
 
 ####################################
