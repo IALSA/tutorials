@@ -7,27 +7,24 @@ output:
 
 At the end of [discussion](http://rmarkdown.rstudio.com/html_document_format.html#creating-a-website) on how to produce <code>HTML</code> documents from <code>.Rmd</code> the official page of the <code>rmarkdown</code> package mentions that entire website can be produced using R Markdown and the described methodology. 
 
-Creating a website similar to [rmarkdown.rstudio.com](rmarkdown.rstudio.com) can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of of **publishing a statitic, blog aware website from a GitHub repository** contain multiple **.Rmd** files, united by common attributes in the <code>_output.yaml_</code> file.
+Creating a website similar to [rmarkdown.rstudio.com](rmarkdown.rstudio.com) can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of of **publishing a statitic, blog aware website from a GitHub repository** containing multiple **.Rmd** files, united by common attributes in the <code>_output.yaml_</code> file.
 
 
-## Starting Point
+#### Starting Point
 
 To organize the process of learning new concepts and terminology we start with  [GitHub Pages Help](https://help.github.com/categories/20/articles). There is a difference between producing a website for a user or organization, and the a website for a specific project. One can use an  [Automatic Page Generator](https://help.github.com/articles/creating-pages-with-the-automatic-generator), but from my understanding so far the limitations of this approach might be substantial. 
-</br>
-TODO: see if you can edit HTML code from the browser in GitHub 
-
     
   
-## Jekyll
+## Setting up Jekyll pipeline
 
-To set up Jekyll publishing  you will need a few things:  
+To set up Jekyll publishing  you will need [Ruby](https://www.ruby-lang.org/en/) language, dependency manager [Bundler](http://bundler.io/) and atomatic page generator [Jekyll](jekyllrb.com) :  
 
 ### Ruby  
   1. Install **Ruby** for Windows using [RubyInstaller](https://www.ruby-lang.org/en/installation/#rubyinstaller)  
   - I used version: **Ruby 1.9.3-p545**
   - check **Add Ruby executables to your PATH** box, I checked all
 
-  2. Download Developmental Kit(**DevKit**) from the Ruby's [download](https://github.com/postmodern/ruby-install) page
+  2. Download Developmental Kit(**DevKit**) from the Ruby's [download]http://rubyinstaller.org/downloads/) page
   - I used version: tdm-32-4.5.2
   - Unpack zip into folder <code>DevKit</code> inside the folder where Ruby was installed.  
   - follow the [guide](https://github.com/oneclick/rubyinstaller/wiki/Development-kit) to properly instlall the kit.</br>   
@@ -69,22 +66,24 @@ ruby -rubygems -e "require 'json'; puts JSON.load('[42]').inspect"
 source 'https://rubygems.org'
 gem 'github-pages'
 ```
-  c. renamed <code>Gemfile.txt</code> into <code>Gemfile</code>
- ### Bundle install  
+  c. renamed <code>Gemfile.txt</code> into <code>Gemfile</code>   
   d. run command line <code>bundle install</code>
     
-## GitHub Pages
- Here's i'm ripping off the styles and settings from the official website of [rmarkdown](https://github.com/rstudio/rmarkdown/tree/gh-pages).
+## Preparing for publishing
+ Jekyll will take the collection of files and folders in the "gh-pages" of your repository and assemble a static website out of them. 
+ 
+ 
+ Here's I demonstrate how to replicate verbatim the styles and settings from the official website of [rmarkdown](https://github.com/rstudio/rmarkdown/tree/gh-pages).
 
   a. Go to the **gh-pages** branch of the [rmarkdown](https://github.com/rstudio/rmarkdown/tree/gh-pages) GitHub repository (you may need to clone it to your machine if you haven't done so already)
 
   b. Into the root of **your** project's _gh-pages_ branch, do copy the following:  
     - folder **libs** containing style libraries
-    - folder **include** containing header and footer for the website
+    - folder **include** containing header (menu) and footer (comments) for the website
     - file <code>Makefile</code> - clarify the function
     - file <code>_output.yaml</code> - defining the common output options for .Rmd files     
     In the future, these styles can be modified to fit the needs of the project. 
-    
+  
   
 ## Producing the website
 
@@ -122,7 +121,7 @@ or a custom address.
 To change the website one must repeat these steps after intriducing changes in the initial .Rmd files
 
 
-## Disqus
+## Connecting to Disqus
 
 1. Register an account with [Disqus](disqus.com) if you haven't already.
 

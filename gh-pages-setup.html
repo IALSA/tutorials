@@ -100,7 +100,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="/tutorials">IALSA tutorials</a>
+      <a class="brand" href="/">IALSA tutorials</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
                     
@@ -179,17 +179,16 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
           </li>  
           
           <li class="dropdown">
-            <a href="other" class="dropdown-toggle" data-toggle="dropdown">Lab Log <b class="caret"></b></a>
+            <a href="lablog" class="dropdown-toggle" data-toggle="dropdown">Lab Log <b class="caret"></b></a>
             <ul class="dropdown-menu">
                <li class="nav-header">2014</li>
               		 <li class="divider">September</li>
-                  
                <li><a href="12-09-2014.html">Sep 12 - Line graphs OCTO</a></li>
-<<<<<<< HEAD
                <li><a href="19-09-2014.html">Sep 19 - From RAW to DRAW</a></li>
-=======
->>>>>>> origin/gh-pages
-               
+               <li><a href="26-09-2014.html">Sep 26 - Reshaping Data</a></li>
+                	 <li class="divider">October</li>               
+               <li><a href="03-10-2014.html">Oct 3 - </a></li>
+ 
             </ul>
           </li>         
           
@@ -211,23 +210,22 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 <div id="TOC">
 <ul>
-<li><a href="#starting-point">Starting Point</a></li>
-<li><a href="#jekyll">Jekyll</a></li>
-<li><a href="#github-pages">GitHub Pages</a></li>
+<li><a href="#setting-up-jekyll-pipeline">Setting up Jekyll pipeline</a></li>
+<li><a href="#preparing-for-publishing">Preparing for publishing</a></li>
 <li><a href="#producing-the-website">Producing the website</a></li>
-<li><a href="#disqus">Disqus</a></li>
+<li><a href="#connecting-to-disqus">Connecting to Disqus</a></li>
 </ul>
 </div>
 
 <p>At the end of <a href="http://rmarkdown.rstudio.com/html_document_format.html#creating-a-website">discussion</a> on how to produce <code>HTML</code> documents from <code>.Rmd</code> the official page of the <code>rmarkdown</code> package mentions that entire website can be produced using R Markdown and the described methodology.</p>
-<p>Creating a website similar to <a href="rmarkdown.rstudio.com">rmarkdown.rstudio.com</a> can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of of <strong>publishing a statitic, blog aware website from a GitHub repository</strong> contain multiple <strong>.Rmd</strong> files, united by common attributes in the <code><em>output.yaml</em></code> file.</p>
-<div id="starting-point" class="section level2">
-<h2>Starting Point</h2>
-<p>To organize the process of learning new concepts and terminology we start with <a href="https://help.github.com/categories/20/articles">GitHub Pages Help</a>. There is a difference between producing a website for a user or organization, and the a website for a specific project. One can use an <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">Automatic Page Generator</a>, but from my understanding so far the limitations of this approach might be substantial. </br> TODO: see if you can edit HTML code from the browser in GitHub</p>
+<p>Creating a website similar to <a href="rmarkdown.rstudio.com">rmarkdown.rstudio.com</a> can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of of <strong>publishing a statitic, blog aware website from a GitHub repository</strong> containing multiple <strong>.Rmd</strong> files, united by common attributes in the <code><em>output.yaml</em></code> file.</p>
+<div id="starting-point" class="section level4">
+<h4>Starting Point</h4>
+<p>To organize the process of learning new concepts and terminology we start with <a href="https://help.github.com/categories/20/articles">GitHub Pages Help</a>. There is a difference between producing a website for a user or organization, and the a website for a specific project. One can use an <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">Automatic Page Generator</a>, but from my understanding so far the limitations of this approach might be substantial.</p>
 </div>
-<div id="jekyll" class="section level2">
-<h2>Jekyll</h2>
-<p>To set up Jekyll publishing you will need a few things:</p>
+<div id="setting-up-jekyll-pipeline" class="section level2">
+<h2>Setting up Jekyll pipeline</h2>
+<p>To set up Jekyll publishing you will need <a href="https://www.ruby-lang.org/en/">Ruby</a> language, dependency manager <a href="http://bundler.io/">Bundler</a> and atomatic page generator <a href="jekyllrb.com">Jekyll</a> :</p>
 <div id="ruby" class="section level3">
 <h3>Ruby</h3>
 <ol style="list-style-type: decimal">
@@ -238,7 +236,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li>check <strong>Add Ruby executables to your PATH</strong> box, I checked all</li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
-<li>Download Developmental Kit(<strong>DevKit</strong>) from the Ruby’s <a href="https://github.com/postmodern/ruby-install">download</a> page</li>
+<li>Download Developmental Kit(<strong>DevKit</strong>) from the Ruby’s [download]<a href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a>) page</li>
 </ol>
 <ul>
 <li>I used version: tdm-32-4.5.2</li>
@@ -270,27 +268,28 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </ul></li>
 </ol>
 </div>
-<div id="jekyll-1" class="section level3">
+<div id="jekyll" class="section level3">
 <h3>Jekyll</h3>
 <ol style="list-style-type: lower-alpha">
 <li>created a text file <code>Gemfile.txt</code> in the root of the repository</li>
 <li><p>the content of the file is</p>
 <pre><code>source &#39;https://rubygems.org&#39;
 gem &#39;github-pages&#39;</code></pre></li>
-<li>renamed <code>Gemfile.txt</code> into <code>Gemfile</code> ### Bundle install<br /></li>
+<li>renamed <code>Gemfile.txt</code> into <code>Gemfile</code><br /></li>
 <li><p>run command line <code>bundle install</code></p></li>
 </ol>
 </div>
 </div>
-<div id="github-pages" class="section level2">
-<h2>GitHub Pages</h2>
-<p>Here’s i’m ripping off the styles and settings from the official website of <a href="https://github.com/rstudio/rmarkdown/tree/gh-pages">rmarkdown</a>.</p>
+<div id="preparing-for-publishing" class="section level2">
+<h2>Preparing for publishing</h2>
+<p>Jekyll will take the collection of files and folders in the “gh-pages” of your repository and assemble a static website out of them.</p>
+<p>Here’s I demonstrate how to replicate verbatim the styles and settings from the official website of <a href="https://github.com/rstudio/rmarkdown/tree/gh-pages">rmarkdown</a>.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Go to the <strong>gh-pages</strong> branch of the <a href="https://github.com/rstudio/rmarkdown/tree/gh-pages">rmarkdown</a> GitHub repository (you may need to clone it to your machine if you haven’t done so already)</p></li>
 <li>Into the root of <strong>your</strong> project’s <em>gh-pages</em> branch, do copy the following:
 <ul>
 <li>folder <strong>libs</strong> containing style libraries</li>
-<li>folder <strong>include</strong> containing header and footer for the website</li>
+<li>folder <strong>include</strong> containing header (menu) and footer (comments) for the website</li>
 <li>file <code>Makefile</code> - clarify the function</li>
 <li>file <code>_output.yaml</code> - defining the common output options for .Rmd files<br />In the future, these styles can be modified to fit the needs of the project.</li>
 </ul></li>
@@ -322,8 +321,8 @@ for( pathRmd in buildthese ) {
 </ol>
 <p>To change the website one must repeat these steps after intriducing changes in the initial .Rmd files</p>
 </div>
-<div id="disqus" class="section level2">
-<h2>Disqus</h2>
+<div id="connecting-to-disqus" class="section level2">
+<h2>Connecting to Disqus</h2>
 <ol style="list-style-type: decimal">
 <li><p>Register an account with <a href="disqus.com">Disqus</a> if you haven’t already.</p></li>
 <li><p>when logged in go to Settings got Admin area</p></li>
