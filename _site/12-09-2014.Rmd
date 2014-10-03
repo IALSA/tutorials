@@ -1,6 +1,2 @@
-<<<<<<< HEAD
-```{r child, child = './labLog/12-09-2014-Line-graphs-OCTO.html'}
-=======
 ```{r child, child = 'LabLog/12-09-2014-Line-graphs-OCTO.html'}
->>>>>>> origin/gh-pages
 ```
