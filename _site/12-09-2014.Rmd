@@ -1,7 +1,2 @@
-<<<<<<< HEAD
-```{r child, child = '../labLog/12-09-2014-Line-graphs-OCTO.html'}
-=======
-```{r child, child = './labLog/12-09-2014-Line-graphs-OCTO_fragment.html'}
->>>>>>> a574e1c374835b0624c725dc09710d5db243e369
-
+```{r child, child = './labLog/12-09-2014-Line-graphs-OCTO.html'}
 ```
