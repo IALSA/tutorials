@@ -24,7 +24,7 @@ To set up Jekyll publishing  you will need [Ruby](https://www.ruby-lang.org/en/)
   - I used version: **Ruby 1.9.3-p545**
   - check **Add Ruby executables to your PATH** box, I checked all
 
-  2. Download Developmental Kit(**DevKit**) from the Ruby's [download]http://rubyinstaller.org/downloads/) page
+  2. Download Developmental Kit(**DevKit**) from the Ruby's [download](http://rubyinstaller.org/downloads/) page
   - I used version: tdm-32-4.5.2
   - Unpack zip into folder <code>DevKit</code> inside the folder where Ruby was installed.  
   - follow the [guide](https://github.com/oneclick/rubyinstaller/wiki/Development-kit) to properly instlall the kit.</br>   
