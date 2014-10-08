@@ -210,24 +210,24 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 <div id="TOC">
 <ul>
-<li><a href="#setting-up-jekyll-pipeline">Setting up Jekyll pipeline</a></li>
-<li><a href="#preparing-for-publishing">Preparing for publishing</a></li>
-<li><a href="#producing-the-website">Producing the website</a></li>
-<li><a href="#connecting-to-disqus">Connecting to Disqus</a></li>
+<li><a href="#a.-setting-up-jekyll-pipeline">A. Setting up Jekyll pipeline</a></li>
+<li><a href="#b.-preparing-for-publishing">B. Preparing for publishing</a></li>
+<li><a href="#c.-producing-the-website">C. Producing the website</a></li>
+<li><a href="#d.-connecting-to-disqus">D. Connecting to Disqus</a></li>
 </ul>
 </div>
 
 <p>At the end of <a href="http://rmarkdown.rstudio.com/html_document_format.html#creating-a-website">discussion</a> on how to produce <code>HTML</code> documents from <code>.Rmd</code> the official page of the <code>rmarkdown</code> package mentions that entire website can be produced using R Markdown and the described methodology.</p>
-<p>Creating a website similar to <a href="rmarkdown.rstudio.com">rmarkdown.rstudio.com</a> can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of of <strong>publishing a statitic, blog aware website from a GitHub repository</strong> containing multiple <strong>.Rmd</strong> files, united by common attributes in the <code><em>output.yaml</em></code> file.</p>
+<p>Creating a website similar to <a href="rmarkdown.rstudio.com">rmarkdown.rstudio.com</a> can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of <strong>publishing a statitic, blog-aware website from a GitHub repository</strong> containing multiple <strong>.html</strong> files, printed from <strong>.Rmd</strong> files and united by common attributes in the <code>**_output.yaml**</code> options file.</p>
 <div id="starting-point" class="section level4">
 <h4>Starting Point</h4>
-<p>To organize the process of learning new concepts and terminology we start with <a href="https://help.github.com/categories/20/articles">GitHub Pages Help</a>. There is a difference between producing a website for a user or organization, and the a website for a specific project. One can use an <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">Automatic Page Generator</a>, but from my understanding so far the limitations of this approach might be substantial.</p>
+<p>To organize the process of learning new concepts and terminology we start with <a href="https://help.github.com/categories/20/articles">GitHub Pages Help</a>. There is a difference between producing a website for a user or organization, and the a website for a specific project. One can use an <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">Automatic Page Generator</a>, but from my understanding so far the limitations of this approach might be substantial. Please report on the use of this technique in the comments and I’ll update this section.</p>
 </div>
-<div id="setting-up-jekyll-pipeline" class="section level2">
-<h2>Setting up Jekyll pipeline</h2>
-<p>To set up Jekyll publishing you will need <a href="https://www.ruby-lang.org/en/">Ruby</a> language, dependency manager <a href="http://bundler.io/">Bundler</a> and atomatic page generator <a href="jekyllrb.com">Jekyll</a> :</p>
-<div id="ruby" class="section level3">
-<h3>Ruby</h3>
+<div id="a.-setting-up-jekyll-pipeline" class="section level2">
+<h2>A. Setting up Jekyll pipeline</h2>
+<p>To set up Jekyll publishing you will need (I)<a href="https://www.ruby-lang.org/en/">Ruby</a> language, (II)dependency manager <a href="http://bundler.io/">Bundler</a> and (III)atomatic page generator <a href="jekyllrb.com">Jekyll</a> :</p>
+<div id="i-ruby" class="section level3">
+<h3>(I) Ruby</h3>
 <ol style="list-style-type: decimal">
 <li>Install <strong>Ruby</strong> for Windows using <a href="https://www.ruby-lang.org/en/installation/#rubyinstaller">RubyInstaller</a><br /></li>
 </ol>
@@ -236,67 +236,63 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li>check <strong>Add Ruby executables to your PATH</strong> box, I checked all</li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
-<li>Download Developmental Kit(<strong>DevKit</strong>) from the Ruby’s [download]<a href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a>) page</li>
+<li>Download Developmental Kit (<strong>DevKit</strong>) from the Ruby’s [download]<a href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a>) page</li>
 </ol>
 <ul>
 <li>I used version: tdm-32-4.5.2</li>
 <li>Unpack zip into folder <code>DevKit</code> inside the folder where Ruby was installed.<br /></li>
-<li>follow the <a href="https://github.com/oneclick/rubyinstaller/wiki/Development-kit">guide</a> to properly instlall the kit.</br><br />In brief:
+<li>Follow the <a href="https://github.com/oneclick/rubyinstaller/wiki/Development-kit">guide</a> to properly instlall the kit.</br><br />In brief:
 <ol style="list-style-type: lower-alpha">
 <li><p>Open the folder wher DevKit was unzipped</p>
 <pre><code>  cd c:\Ruby193\DevKit </code></pre></li>
 <li><p>Generate <code>config.yml</code> file:</p>
-<pre><code> ruby dk.rb init</code></pre>
+<pre class="ruby"><code> ruby dk.rb init</code></pre>
 <p>and edit it (optional) to add or remove Rubies.</p></li>
 <li><p>Finally, enhance your Rubies with DevKit:</p>
-<pre><code> ruby dk.rb install</code></pre></li>
+<pre class="ruby"><code> ruby dk.rb install</code></pre></li>
 <li><p>Test installation:</p>
-<pre><code>gem install json --platform=ruby</code></pre>
+<pre class="ruby"><code>gem install json --platform=ruby</code></pre>
 <p>you should see “with native extensions”&quot; in the screen messages. To confirm that the json gem is working, run:</p>
-<pre><code>ruby -rubygems -e &quot;require &#39;json&#39;; puts JSON.load(&#39;[42]&#39;).inspect&quot;</code></pre></li>
+<pre class="ruby"><code>ruby -rubygems -e &quot;require &#39;json&#39;; puts JSON.load(&#39;[42]&#39;).inspect&quot;</code></pre>
+<p>This is supposed to return “42” for a successful test.</p></li>
 </ol></li>
 </ul>
 </div>
-<div id="bundler" class="section level3">
-<h3>Bundler</h3>
-<ol style="list-style-type: lower-alpha">
-<li>Open the local GitHub folder<br /></li>
-<li>Initiate command prompt by typing <code>cmd</code> in the address bar of the File Explorer<br /></li>
-<li>type in <code>gem install bundler</code> in the command line
-<ul>
-<li>the text should say that the 1 gem has been installed</li>
-</ul></li>
-</ol>
+<div id="ii-bundler" class="section level3">
+<h3>(II) Bundler</h3>
+<p>Now you need to install Bundler into the root directory of your GitHub repository (Important: make sure that you’ve selected gh-pages branch). a. Open the local folder of you repositoyr (~GitHub/RepositoryName) b. Initiate command prompt by typing <code>cmd</code> in the address bar of the File Explorer<br /> c. Type in <code>gem install bundler</code> in the command line<br /> - the text should say that the 1 gem has been installed</p>
 </div>
-<div id="jekyll" class="section level3">
-<h3>Jekyll</h3>
+<div id="iii-jekyll" class="section level3">
+<h3>(III) Jekyll</h3>
 <ol style="list-style-type: lower-alpha">
-<li>created a text file <code>Gemfile.txt</code> in the root of the repository</li>
-<li><p>the content of the file is</p>
+<li>Create a text file <code>Gemfile.txt</code> in the root of the repository</li>
+<li><p>The content of the file is</p>
 <pre><code>source &#39;https://rubygems.org&#39;
 gem &#39;github-pages&#39;</code></pre></li>
-<li>renamed <code>Gemfile.txt</code> into <code>Gemfile</code><br /></li>
-<li><p>run command line <code>bundle install</code></p></li>
+<li>Rename <code>Gemfile.txt</code> into <code>Gemfile</code><br /></li>
+<li><p>Run command line <code>bundle install</code><br />The code in step (d.) should executed for each repository you want to publish as a website, whereas the installation of Bundler (step II.) is done once per machine.</p></li>
 </ol>
 </div>
 </div>
-<div id="preparing-for-publishing" class="section level2">
-<h2>Preparing for publishing</h2>
+<div id="b.-preparing-for-publishing" class="section level2">
+<h2>B. Preparing for publishing</h2>
 <p>Jekyll will take the collection of files and folders in the “gh-pages” of your repository and assemble a static website out of them.</p>
-<p>Here’s I demonstrate how to replicate verbatim the styles and settings from the official website of <a href="https://github.com/rstudio/rmarkdown/tree/gh-pages">rmarkdown</a>.</p>
+<p>Here I demonstrate how to replicate verbatim the styles and settings from the official website of <a href="https://github.com/rstudio/rmarkdown/tree/gh-pages">rmarkdown</a>.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Go to the <strong>gh-pages</strong> branch of the <a href="https://github.com/rstudio/rmarkdown/tree/gh-pages">rmarkdown</a> GitHub repository (you may need to clone it to your machine if you haven’t done so already)</p></li>
-<li>Into the root of <strong>your</strong> project’s <em>gh-pages</em> branch, do copy the following:
+<li>Into the root of <strong>your</strong> project’s <em>gh-pages</em> branch, copy the following:
 <ul>
 <li>folder <strong>libs</strong> containing style libraries</li>
 <li>folder <strong>include</strong> containing header (menu) and footer (comments) for the website</li>
 <li>file <code>Makefile</code> - clarify the function</li>
 <li>file <code>_output.yaml</code> - defining the common output options for .Rmd files<br />In the future, these styles can be modified to fit the needs of the project.</li>
+<li>Alternative to steps III.a - III.c, you can copy an existing file “Gemfile”</li>
 </ul></li>
 </ol>
+<p>NOTE: I’m still working on editing the styles of the site. Two routes are possibles:<br /> - Route One : edit the min.js style libraries directly - Route Two : find a better fitting Bootstrap templates.<br /> These routes need researching before recommendation for reproduction. Please report your tests in the comments.</p>
 </div>
-<div id="producing-the-website" class="section level2">
-<h2>Producing the website</h2>
+<div id="c.-producing-the-website" class="section level2">
+<h2>C. Producing the website</h2>
 <p>At this point the website is a collection of .Rmd files stored in a single repository. Their output attributes are shared and controlled by <code>output.yaml</code> in the root. To produce the website execute the following steps:</p>
 <ol style="list-style-type: decimal">
 <li>Run “produceReports.R” scripts that prints HTML from all .Rdm files. For example:</li>
@@ -312,20 +308,25 @@ for( pathRmd in buildthese ) {
 }</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Open command line from the repository’s root and execute</p>
-<pre><code>bunlde exec jekyll serve</code></pre>
+<pre><code>bundle exec jekyll serve</code></pre>
 <p>This will assemble the website and deploy it to the local host. Examine it at</p>
-<pre><code>localhost:4000</code></pre></li>
+<pre><code>localhost:4000</code></pre>
+<p>Alternatively, you can add this line at the end of “produceReports.R” script</p>
+<pre><code># base::system(&quot;bundle exec jekyll build&quot;) 
+# or
+# base::system(&quot;bundle exec jekyll serve&quot;)</code></pre>
+<p>However, I’m not sure, whether the working directory is passed to jekyll or not. Needs testing.</p></li>
 <li><p>Commit and sync the changes in the gh-pages branch. The website should become availible at</p>
 <pre><code>username.github.io/projectname</code></pre>
 <p>or a custom address.</p></li>
 </ol>
-<p>To change the website one must repeat these steps after intriducing changes in the initial .Rmd files</p>
+<p>To change the website one must repeat these steps after introducing changes in the initial .Rmd files</p>
 </div>
-<div id="connecting-to-disqus" class="section level2">
-<h2>Connecting to Disqus</h2>
+<div id="d.-connecting-to-disqus" class="section level2">
+<h2>D. Connecting to Disqus</h2>
 <ol style="list-style-type: decimal">
 <li><p>Register an account with <a href="disqus.com">Disqus</a> if you haven’t already.</p></li>
-<li><p>when logged in go to Settings got Admin area</p></li>
+<li><p>When logged in go to Settings got Admin area</p></li>
 <li><p>Click on the drop-down button and select “Add new site”</p></li>
 <li><p>Enter the names of your blog, that will be hosted on disqus servers.</p></li>
 <li>After completing the registration the promt will take you to the page containing code snippets you have to add to your website to enable the comments</li>

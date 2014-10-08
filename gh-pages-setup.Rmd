@@ -13,7 +13,7 @@ Creating a website similar to [rmarkdown.rstudio.com](rmarkdown.rstudio.com) can
 
 To organize the process of learning new concepts and terminology we start with  [GitHub Pages Help](https://help.github.com/categories/20/articles). There is a difference between producing a website for a user or organization, and the a website for a specific project. One can use an  [Automatic Page Generator](https://help.github.com/articles/creating-pages-with-the-automatic-generator), but from my understanding so far the limitations of this approach might be substantial. Please report on the use of this technique in the comments and I'll update this section.  
   
-## Setting up Jekyll pipeline
+## A. Setting up Jekyll pipeline
 
 To set up Jekyll publishing  you will need (I)[Ruby](https://www.ruby-lang.org/en/) language, (II)dependency manager [Bundler](http://bundler.io/) and (III)atomatic page generator [Jekyll](jekyllrb.com) :  
 
@@ -53,7 +53,8 @@ This is supposed to return "42" for a successful test.
 
  
 ### (II) Bundler  
-  a. Open the local GitHub folder  
+  Now you need to install Bundler into the root directory of your GitHub repository (Important: make sure that you've selected gh-pages branch). 
+  a. Open the local folder of you repositoyr (~GitHub/RepositoryName) 
   b. Initiate command prompt by typing <code>cmd</code> in the address bar of the File Explorer  
   c. Type in <code>gem install bundler</code> in the command line  
     - the text should say that the 1 gem has been installed  
@@ -66,9 +67,10 @@ source 'https://rubygems.org'
 gem 'github-pages'
 ```
   c. Rename <code>Gemfile.txt</code> into <code>Gemfile</code>   
-  d. Run command line <code>bundle install</code>
+  d. Run command line <code>bundle install</code>  
+The code in step (d.) should executed for each repository you want to publish as a website, whereas the installation of Bundler (step II.) is done once per machine.
     
-## Preparing for publishing
+## B. Preparing for publishing
  Jekyll will take the collection of files and folders in the "gh-pages" of your repository and assemble a static website out of them. 
  
  
@@ -81,10 +83,15 @@ gem 'github-pages'
     - folder **include** containing header (menu) and footer (comments) for the website
     - file <code>Makefile</code> - clarify the function
     - file <code>_output.yaml</code> - defining the common output options for .Rmd files     
-    In the future, these styles can be modified to fit the needs of the project. 
+    In the future, these styles can be modified to fit the needs of the project.
+    - Alternative to steps III.a - III.c, you can copy an existing file "Gemfile"
   
+  NOTE: I'm still working on editing the styles of the site. Two routes are possibles:  
+    - Route One : edit the min.js style libraries directly
+    - Route Two : find a better fitting Bootstrap templates.  
+  These routes need researching before recommendation for reproduction. Please report your tests in the comments. 
   
-## Producing the website
+## C. Producing the website
 
 At this point the website is a collection of .Rmd files stored in a single repository. Their output attributes are shared and controlled by <code>output.yaml</code> in the root.  To produce the website execute the following steps:
 
@@ -110,6 +117,14 @@ This will assemble the website and deploy it to the local host. Examine it at
 ```
 localhost:4000
 ```
+Alternatively, you can add this line at the end of "produceReports.R" script
+```
+# base::system("bundle exec jekyll build") 
+# or
+# base::system("bundle exec jekyll serve")
+```
+However, I'm not sure, whether the working directory is passed to jekyll or not. Needs testing. 
+
 
 3. Commit and sync the changes in the gh-pages branch. The website should become availible at 
 ```
@@ -117,10 +132,10 @@ username.github.io/projectname
 ```
 or a custom address.
 
-To change the website one must repeat these steps after intriducing changes in the initial .Rmd files
+To change the website one must repeat these steps after introducing changes in the initial .Rmd files
 
 
-## Connecting to Disqus
+## D. Connecting to Disqus
 
 1. Register an account with [Disqus](disqus.com) if you haven't already.
 

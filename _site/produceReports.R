@@ -35,3 +35,5 @@ for( pathRmd in buildthese ) {
                     #                     output_file=pathMd,
                     clean=TRUE)
 }
+# base::system("bundle exec jekyll build")
+base::system("bundle exec jekyll serve")

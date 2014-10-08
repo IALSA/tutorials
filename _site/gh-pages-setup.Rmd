@@ -1,84 +1,90 @@
 At the end of [discussion](http://rmarkdown.rstudio.com/html_document_format.html#creating-a-website) on how to produce <code>HTML</code> documents from <code>.Rmd</code> the official page of the <code>rmarkdown</code> package mentions that entire website can be produced using R Markdown and the described methodology. 
 
-Creating a website similar to [rmarkdown.rstudio.com](rmarkdown.rstudio.com) can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of of **publishing a statitic, blog aware website from a GitHub repository** containing multiple **.Rmd** files, united by common attributes in the <code>_output.yaml_</code> file.
-
+Creating a website similar to [rmarkdown.rstudio.com](rmarkdown.rstudio.com) can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of  **publishing a statitic, blog-aware website from a GitHub repository** containing multiple **.html** files, printed from  **.Rmd** files and united by common attributes in the <code>**_output.yaml**</code>  options file.
 
 #### Starting Point
 
-To organize the process of learning new concepts and terminology we start with  [GitHub Pages Help](https://help.github.com/categories/20/articles). There is a difference between producing a website for a user or organization, and the a website for a specific project. One can use an  [Automatic Page Generator](https://help.github.com/articles/creating-pages-with-the-automatic-generator), but from my understanding so far the limitations of this approach might be substantial. 
-    
+To organize the process of learning new concepts and terminology we start with  [GitHub Pages Help](https://help.github.com/categories/20/articles). There is a difference between producing a website for a user or organization, and the a website for a specific project. One can use an  [Automatic Page Generator](https://help.github.com/articles/creating-pages-with-the-automatic-generator), but from my understanding so far the limitations of this approach might be substantial. Please report on the use of this technique in the comments and I'll update this section.  
   
-## Setting up Jekyll pipeline
+## A. Setting up Jekyll pipeline
 
-To set up Jekyll publishing  you will need [Ruby](https://www.ruby-lang.org/en/) language, dependency manager [Bundler](http://bundler.io/) and atomatic page generator [Jekyll](jekyllrb.com) :  
+To set up Jekyll publishing  you will need (I)[Ruby](https://www.ruby-lang.org/en/) language, (II)dependency manager [Bundler](http://bundler.io/) and (III)atomatic page generator [Jekyll](jekyllrb.com) :  
 
-### Ruby  
+### (I) Ruby  
   1. Install **Ruby** for Windows using [RubyInstaller](https://www.ruby-lang.org/en/installation/#rubyinstaller)  
   - I used version: **Ruby 1.9.3-p545**
   - check **Add Ruby executables to your PATH** box, I checked all
 
-  2. Download Developmental Kit(**DevKit**) from the Ruby's [download]http://rubyinstaller.org/downloads/) page
+  2. Download Developmental Kit (**DevKit**) from the Ruby's [download]http://rubyinstaller.org/downloads/) page
   - I used version: tdm-32-4.5.2
   - Unpack zip into folder <code>DevKit</code> inside the folder where Ruby was installed.  
-  - follow the [guide](https://github.com/oneclick/rubyinstaller/wiki/Development-kit) to properly instlall the kit.</br>   
+  - Follow the [guide](https://github.com/oneclick/rubyinstaller/wiki/Development-kit) to properly instlall the kit.</br>   
 In brief:  
     a. Open the folder wher DevKit was unzipped  
 ```
   cd c:\Ruby193\DevKit 
 ```  
     b. Generate <code>config.yml</code> file:    
-```
+```ruby
  ruby dk.rb init
 ```  
  and edit it (optional) to add or remove Rubies. 
  
     c. Finally, enhance your Rubies with DevKit:   
-```
+```ruby
  ruby dk.rb install
 ```  
     d. Test installation: 
-```
+```ruby
 gem install json --platform=ruby
 ```  
 you should see "with native extensions"" in the screen messages. To confirm that the json gem is working, run:
-```
+```ruby
 ruby -rubygems -e "require 'json'; puts JSON.load('[42]').inspect"
 ```  
+This is supposed to return "42" for a successful test.
 
  
-### Bundler  
-  a. Open the local GitHub folder  
+### (II) Bundler  
+  Now you need to install Bundler into the root directory of your GitHub repository (Important: make sure that you've selected gh-pages branch). 
+  a. Open the local folder of you repositoyr (~GitHub/RepositoryName) 
   b. Initiate command prompt by typing <code>cmd</code> in the address bar of the File Explorer  
-  c. type in <code>gem install bundler</code> in the command line  
+  c. Type in <code>gem install bundler</code> in the command line  
     - the text should say that the 1 gem has been installed  
   
-### Jekyll  
-  a. created a text file <code>Gemfile.txt</code> in the root of the repository
-  b. the content of the file is
+### (III) Jekyll  
+  a. Create a text file <code>Gemfile.txt</code> in the root of the repository
+  b. The content of the file is
 ```
 source 'https://rubygems.org'
 gem 'github-pages'
 ```
-  c. renamed <code>Gemfile.txt</code> into <code>Gemfile</code>   
-  d. run command line <code>bundle install</code>
+  c. Rename <code>Gemfile.txt</code> into <code>Gemfile</code>   
+  d. Run command line <code>bundle install</code>  
+The code in step (d.) should executed for each repository you want to publish as a website, whereas the installation of Bundler (step II.) is done once per machine.
     
-## Preparing for publishing
+## B. Preparing for publishing
  Jekyll will take the collection of files and folders in the "gh-pages" of your repository and assemble a static website out of them. 
  
  
- Here's I demonstrate how to replicate verbatim the styles and settings from the official website of [rmarkdown](https://github.com/rstudio/rmarkdown/tree/gh-pages).
+ Here I demonstrate how to replicate verbatim the styles and settings from the official website of [rmarkdown](https://github.com/rstudio/rmarkdown/tree/gh-pages).
 
   a. Go to the **gh-pages** branch of the [rmarkdown](https://github.com/rstudio/rmarkdown/tree/gh-pages) GitHub repository (you may need to clone it to your machine if you haven't done so already)
 
-  b. Into the root of **your** project's _gh-pages_ branch, do copy the following:  
+  b. Into the root of **your** project's _gh-pages_ branch, copy the following:  
     - folder **libs** containing style libraries
     - folder **include** containing header (menu) and footer (comments) for the website
     - file <code>Makefile</code> - clarify the function
     - file <code>_output.yaml</code> - defining the common output options for .Rmd files     
-    In the future, these styles can be modified to fit the needs of the project. 
+    In the future, these styles can be modified to fit the needs of the project.
+    - Alternative to steps III.a - III.c, you can copy an existing file "Gemfile"
   
+  NOTE: I'm still working on editing the styles of the site. Two routes are possibles:  
+    - Route One : edit the min.js style libraries directly
+    - Route Two : find a better fitting Bootstrap templates.  
+  These routes need researching before recommendation for reproduction. Please report your tests in the comments. 
   
-## Producing the website
+## C. Producing the website
 
 At this point the website is a collection of .Rmd files stored in a single repository. Their output attributes are shared and controlled by <code>output.yaml</code> in the root.  To produce the website execute the following steps:
 
@@ -98,12 +104,20 @@ for( pathRmd in buildthese ) {
 
 2. Open command line from the repository's root and execute
 ```
-bunlde exec jekyll serve
+bundle exec jekyll serve
 ```
 This will assemble the website and deploy it to the local host. Examine it at
 ```
 localhost:4000
 ```
+Alternatively, you can add this line at the end of "produceReports.R" script
+```
+# base::system("bundle exec jekyll build") 
+# or
+# base::system("bundle exec jekyll serve")
+```
+However, I'm not sure, whether the working directory is passed to jekyll or not. Needs testing. 
+
 
 3. Commit and sync the changes in the gh-pages branch. The website should become availible at 
 ```
@@ -111,54 +125,20 @@ username.github.io/projectname
 ```
 or a custom address.
 
-To change the website one must repeat these steps after intriducing changes in the initial .Rmd files
+To change the website one must repeat these steps after introducing changes in the initial .Rmd files
 
 
-## Connecting to Disqus
+## D. Connecting to Disqus
 
 1. Register an account with [Disqus](disqus.com) if you haven't already.
 
-2. when logged in go to Settings got Admin area 
+2. When logged in go to Settings got Admin area 
 
 3. Click on the drop-down button and select "Add new site"
 
 4. Enter the names of your blog, that will be hosted on disqus servers.
 
 5. After completing the registration the promt will take you to the page containing code snippets you have to add to your website to enable the comments
-  - copy the snippets into appropriate places in the file **./include/after_body.html**
+   - copy the snippets into appropriate places in the file **./include/after_body.html**
   
 6. Re-run the steps 1-3 from the previous subsection. The comments should be enabled now.
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
