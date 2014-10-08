@@ -7,17 +7,17 @@ output:
 
 At the end of [discussion](http://rmarkdown.rstudio.com/html_document_format.html#creating-a-website) on how to produce <code>HTML</code> documents from <code>.Rmd</code> the official page of the <code>rmarkdown</code> package mentions that entire website can be produced using R Markdown and the described methodology. 
 
-Creating a website similar to [rmarkdown.rstudio.com](rmarkdown.rstudio.com) can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of of **publishing a statitic, blog aware website from a GitHub repository** containing multiple **.Rmd** files, united by common attributes in the <code>_output.yaml_</code> file.
+Creating a website similar to [rmarkdown.rstudio.com](rmarkdown.rstudio.com) can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of  **publishing a statitic, blog-aware website from a GitHub repository** containing multiple **.html** files, printed from  **.Rmd** files and united by common attributes in the <code>**_output.yaml**</code>  options file.
 
 #### Starting Point
 
-To organize the process of learning new concepts and terminology we start with  [GitHub Pages Help](https://help.github.com/categories/20/articles). There is a difference between producing a website for a user or organization, and the a website for a specific project. One can use an  [Automatic Page Generator](https://help.github.com/articles/creating-pages-with-the-automatic-generator), but from my understanding so far the limitations of this approach might be substantial. 
+To organize the process of learning new concepts and terminology we start with  [GitHub Pages Help](https://help.github.com/categories/20/articles). There is a difference between producing a website for a user or organization, and the a website for a specific project. One can use an  [Automatic Page Generator](https://help.github.com/articles/creating-pages-with-the-automatic-generator), but from my understanding so far the limitations of this approach might be substantial. Please report on the use of this technique in the comments and I'll update this section.  
   
 ## Setting up Jekyll pipeline
 
-To set up Jekyll publishing  you will need [Ruby](https://www.ruby-lang.org/en/) language, dependency manager [Bundler](http://bundler.io/) and atomatic page generator [Jekyll](jekyllrb.com) :  
+To set up Jekyll publishing  you will need (I)[Ruby](https://www.ruby-lang.org/en/) language, (II)dependency manager [Bundler](http://bundler.io/) and (III)atomatic page generator [Jekyll](jekyllrb.com) :  
 
-### Ruby  
+### (I) Ruby  
   1. Install **Ruby** for Windows using [RubyInstaller](https://www.ruby-lang.org/en/installation/#rubyinstaller)  
   - I used version: **Ruby 1.9.3-p545**
   - check **Add Ruby executables to your PATH** box, I checked all
@@ -49,15 +49,16 @@ you should see "with native extensions"" in the screen messages. To confirm that
 ```ruby
 ruby -rubygems -e "require 'json'; puts JSON.load('[42]').inspect"
 ```  
+This is supposed to return "42" for a successful test.
 
  
-### Bundler  
+### (II) Bundler  
   a. Open the local GitHub folder  
   b. Initiate command prompt by typing <code>cmd</code> in the address bar of the File Explorer  
   c. Type in <code>gem install bundler</code> in the command line  
     - the text should say that the 1 gem has been installed  
   
-### Jekyll  
+### (III) Jekyll  
   a. Create a text file <code>Gemfile.txt</code> in the root of the repository
   b. The content of the file is
 ```
