@@ -105,7 +105,7 @@ for( pathRmd in buildthese ) {
 
 2. Open command line from the repository's root and execute
 ```
-bunlde exec jekyll serve
+bundle exec jekyll serve
 ```
 This will assemble the website and deploy it to the local host. Examine it at
 ```
