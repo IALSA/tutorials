@@ -9,6 +9,7 @@ Introduction to Reproducible Research (Demo)
 ========================================================
 author: Andrey Koval
 date: October 10, 2014
+transition: fade
 
 The Laboratory for Integrative Lifespan Research   
 Department of Psychology  
@@ -66,7 +67,7 @@ Goals of RR
 RR uses code to
 ========================================================
 ![reproducible flow](images/2014-10-10/reproducible-flow.png)  
-In the process of achieving these goals we encounter the need to perform particular tasks in some computer environment:
+In the process of achieving these goals we encounter the need to perform particular tasks on a computer:
 
 1. Load and inspect datasets  
 2. Depict data in statistical graphics  
@@ -96,13 +97,14 @@ Merc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
 Merc 280          19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
 ```
 
-
 2) Depict data as statistical graphics
 ========================================================
 
 ```r
 require(ggplot2)
-ggplot(mtcars, aes(x=wt, y=mpg)) + geom_point()
+p <- ggplot(mtcars, aes(x=wt, y=mpg)) 
+p <- p + geom_point()
+p
 ```
 
 ![plot of chunk block2](2014-10-10-Intro-to-RR-Demo-figure/block2.png) 
@@ -132,15 +134,34 @@ require(ggplot2)
 ds <- mtcars
 ds$mpg_modeled <- predict(lm(mpg ~ wt, mtcars))
 p <- ggplot(ds, aes(x=wt, y=mpg)) 
-p <- p + geom_point() 
-p <- p + geom_line(aes(y=mpg_modeled),color="red")
+# p <- p + geom_point() 
+p <- p + geom_point(aes(y=mpg_modeled),color="red")
 p
 ```
 
 ![plot of chunk block4](2014-10-10-Intro-to-RR-Demo-figure/block4.png) 
 
+4) Compare observed and modeled data
+========================================================
+
+```r
+require(ggplot2)
+ds <- mtcars
+ds$mpg_modeled <- predict(lm(mpg ~ wt, mtcars))
+p <- ggplot(ds, aes(x=wt, y=mpg)) 
+p <- p + geom_point() 
+p <- p + geom_line(aes(y=mpg_modeled),color="red")
+p
+```
+
+![plot of chunk block4a](2014-10-10-Intro-to-RR-Demo-figure/block4a.png) 
+
+
+
 5) Produce reports 
 ========================================================
 that discuss this comparision and verbalize the conclusions that can be drawn from the analysis
+
+We just did it!
  
 
