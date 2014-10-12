@@ -42,7 +42,7 @@ you should see "with native extensions"" in the screen messages. To confirm that
 ```ruby
 ruby -rubygems -e "require 'json'; puts JSON.load('[42]').inspect"
 ```  
-This is supposed to return "42" for a successful test.
+This is supposed to return "42" for a successful test. For more see [Jekyll installation guide for Windows] (http://jekyll-windows.juthilo.com/)
 
  
 ### (II) Bundler  
