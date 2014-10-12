@@ -1,0 +1,3 @@
+
+```{r child, child = 'LabLog/2014-10-10-Intro-to-RR-Demo.html'}
+```

@@ -1,0 +1,107 @@
+Introduction to Reproducible Research (Demo)
+========================================================
+author: Andrey Koval
+date: October 10, 2014
+
+The Laboratory for Integrative Lifespan Research   
+Department of Psychology  
+University of Victoria  
+
+
+Traditional research workflow
+========================================================
+![traditional flow](images/2014-10-10/traditional-flow.png)  
+![academic paper](images/2014-10-10/academic-paper.png)  
+
+
+Reproducible research workflow
+========================================================
+![reproducible flow](images/2014-10-10/reproducible-flow.png)    
+as compared to traditional:  
+![traditional flow](images/2014-10-10/traditional-flow.png)  
+
+
+Advantages of RR
+========================================================
+![reproducible flow](images/2014-10-10/reproducible-flow.png)    
+
+- Less prone to human error  
+- Removes tedious jobs  
+- Recordable workflow  
+- Correcting mistakes later  
+- Removes cognitive strain to synchronize analysis and discussion  
+
+TOOLBOX and toolset of RR
+========================================================
+![reproducible flow](images/2014-10-10/reproducible-flow.png)  
+ - R
+ - RStudio
+ - GitHub
+ - git
+ 
+ toolbox and TOOLSET of RR
+========================================================
+![reproducible flow](images/2014-10-10/reproducible-flow.png)  
+ - Data Manipulation  
+ - Graph Production  
+ - Statistical Modeling  
+ - Dynamic Reporting  
+
+
+Goals of RR
+========================================================
+![reproducible flow](images/2014-10-10/reproducible-flow.png)    
+**Ultimate** : Answering a research question  
+**Practical** : Publishing a paper, producing a manuscript  
+**Technical** : Producing a dynamic document   
+
+
+RR uses code to
+========================================================
+![reproducible flow](images/2014-10-10/reproducible-flow.png)  
+In the process of achieving these goals we encounter the need to perform particular tasks in some computer environment:
+
+1. Load and inspect datasets  
+2. Depict data in statistical graphics  
+3. Fit statistical models  
+4. Compare observed and modeled data  
+5. Produce reports discussing the steps above  
+
+1. Load and inspect datasets
+========================================================
+```{r block1, message=FALSE}
+ds <- mtcars
+head(ds, 10)
+```
+
+
+2) Depict data as statistical graphics
+========================================================
+```{r block2, message=FALSE}
+require(ggplot2)
+ggplot(mtcars, aes(x=wt, y=mpg)) + geom_point()
+```
+
+3) Fit statistical models
+========================================================
+```{r block3, message=FALSE}
+lm(mpg ~ wt, mtcars)
+```
+
+4) Compare observed and modeled data
+========================================================
+```{r block4, message=FALSE}
+require(ggplot2)
+ds <- mtcars
+ds$mpg_modeled <- predict(lm(mpg ~ wt, mtcars))
+p <- ggplot(ds, aes(x=wt, y=mpg)) 
+p <- p + geom_point() 
+p <- p + geom_line(aes(y=mpg_modeled),color="red")
+p
+```
+
+5) Produce reports 
+========================================================
+that discuss this comparision and verbalize the conclusions that can be drawn from the analysis
+ 
+
