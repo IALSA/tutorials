@@ -1,8 +1,7 @@
-Tutorials
+IALSA Tutorials
 =========
 
-Collection of tutorials to help you get started with GitHub, R, RStudio, and more.
+Welcome to the collection of tutorials that should help get you started with your  reproducible research project.
 
-Consult the table of contents 
-
+Please visit [ialsa.github.io/tutorials](http://ialsa.github.io/tutorials) for the live version of the website. 
 
