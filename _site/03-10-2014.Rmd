@@ -1,3 +1,0 @@
-
-```{r child, child = 'LabLog/03-10-2014-Dementia-Personality-OCTO-Part2.html'}
-```

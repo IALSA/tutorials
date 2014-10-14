@@ -1,31 +1,10 @@
-# rm(list=ls(all=TRUE))
-# ########## Production of reports from .Rmd files ###
-# 
-# patternToBuild <- "(?<!README)\\.(R){0,1}md$" #Gets all 'Rmd' and 'md' files, that aren't named `README`.
-# pathFilesToBuild <- list.files(full.names=TRUE, recursive=TRUE)
-# pathFilesToBuild <- grep(patternToBuild, pathFilesToBuild, perl=TRUE, value=TRUE)
-# 
-# testit::assert("The knitr Rmd files should exist.", base::file.exists(pathFilesToBuild))
-# for( pathFile in pathFilesToBuild ) {
-#   #   pathMd <- base::gsub(pattern=".Rmd$", replacement=".md", x=pathRmd)
-#   rmarkdown::render(input = pathFile, 
-#                     output_format=c(
-#                       #                        "pdf_document"
-#                       #                       ,"md_document"
-#                       "html_document"
-#                     ),
-#                     clean=TRUE)
-# }
-# 
-# base::system("bundle exec jekyll build")
-
-m(list=ls(all=TRUE))
-
+rm(list=ls(all=TRUE))
 ########## Production of reports from .Rmd files ###
-#./Vignettes/Questions
-path_index <- base::file.path("./index.Rmd")
-path_26_09_2014 <- base::file.path("./26-09-2014.Rmd")
-pathFilesToBuild <- c(path_26_09_2014)
+
+patternToBuild <- "(?<!README)\\.(R){0,1}md$" #Gets all 'Rmd' and 'md' files, that aren't named `README`.
+pathFilesToBuild <- list.files(full.names=TRUE, recursive=TRUE)
+pathFilesToBuild <- grep(patternToBuild, pathFilesToBuild, perl=TRUE, value=TRUE)
+
 testit::assert("The knitr Rmd files should exist.", base::file.exists(pathFilesToBuild))
 for( pathFile in pathFilesToBuild ) {
   #   pathMd <- base::gsub(pattern=".Rmd$", replacement=".md", x=pathRmd)
@@ -39,4 +18,3 @@ for( pathFile in pathFilesToBuild ) {
 }
 
 base::system("bundle exec jekyll build")
-# Or run this from the terminal to keep RStudio free to execute it's own stuff: `bundle exec jekyll serve` at localhost:4000

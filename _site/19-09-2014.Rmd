@@ -1,2 +1,0 @@
-```{r child, child = 'LabLog/19-09-2014-From-Raw-to-Draw.html'}
-```
