@@ -205,11 +205,11 @@ Looking ahead
 ===
 - Oct 14 -- Toolbox and Skillset of Reproducible Research (RR) 
 - Oct 21  -- RR Basic Skills (1): **Data** Manipulation
-- Oct 28  -- Introduction to Latent Class and Latent Transition Models
+- Oct 28  -- Intro to Latent Class and Latent Transition Models
 - Nov 4  -- RR Basic Skills (2): **Graph** Production
 - Nov 11  -- Remembrance Day (No Session)  
 - Nov 18  -- RR Basic Skills (3): Statistical **Modeling** 
-- Nov 25  -- RR Basic Skills (4): Dynamic Reporting 
+- Nov 25  -- RR Basic Skills (4): Dynamic **Reporting** 
 - Dec 2 -- Migrating into R from other Statistical Software 
  
 
@@ -220,6 +220,8 @@ Resources
  - another presentation by Will will give you a excellent overview of [Statistical Collaboration with GitHub](http://htmlpreview.github.io/?https://raw.githubusercontent.com/OuhscBbmc/StatisticalComputing/master/2014_Presentations/05_May/BeasleyScugGitHub2014-05.html#/)
  - Winston Chan's [R Cookbook](http://shop.oreilly.com/product/9780596809164.do) is a perfect book to get you started with producing graphs with RStudio
  - [Quick-R](http://www.statmethods.net/) - thorough and convenient resource for R reference
+ </br>
+ - [ialsa.github.io/tutorials](ialsa.hithub.tutorials) will be the sattelite resource for these lecture series, check for updates
  
 
 Fin
