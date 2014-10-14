@@ -95,4 +95,4 @@ estimation.
 [islandhealth]:./images/island_health_logo_full.jpg  
 [uviccoag]:./images/CentreOnAgingLogo.gif  
 [popdata]:./images/populationDataBc.jpg  
-[lecture1]:http://htmlpreview.github.io/?https://raw.githubusercontent.com/IALSA/tutorials/gh-pages/LabLog/2014-10-10-Intro-to-RR-Demo.html
+[lecture1]:./LabLog/2014-10-14-Toolbox-and-Skillset.html

@@ -5,11 +5,13 @@
 </style>
 
 
-Introduction to Reproducible Research (Demo)
+Toolbox and Skillset of Reproducible Research
 ========================================================
 author: Andrey Koval
-date: October 10, 2014
+date: October 14, 2014
 transition: fade
+transition-speed: fast
+
 
 The Laboratory for Integrative Lifespan Research   
 Department of Psychology  
