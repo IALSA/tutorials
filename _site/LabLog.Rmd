@@ -28,9 +28,11 @@ In focus: Personality and Dementia
 Topic: [Part 2: Graphing Data][20141003] 
 Study: OCTO TWIN
 In focus: Personality and Dementia
+Topic: [test link 1 ][201410101] 
+Topic: [test link 2][201410102] 
+Topic: [test link 3][201410103]
 
-### October 10 
-Topic: [Intro to RR (Demo)][20141010]    
+### October 10 ]    
 Study: OCTO TWIN  
 In focus: Personality and Dementia  
 
@@ -39,3 +41,6 @@ In focus: Personality and Dementia
 [20140926]:./LabLog/26-09-2014-Dementia-Personality-OCTO.html
 [20141003]:./LabLog/03-10-2014-Dementia-Personality-OCTO-Part2.html
 [20141010]:http://htmlpreview.github.io/?https://raw.githubusercontent.com/IALSA/tutorials/gh-pages/LabLog/2014-10-10-Intro-to-RR-Demo.html
+[201410101]:./LabLog/2014-10-10-Intro-to-RR-Demo.html
+[201410102]:http://htmlpreview.github.io/?./LabLog/2014-10-10-Intro-to-RR-Demo.html
+[201410103]:http://htmlpreview.github.io/?https://github.com/IALSA/tutorials/blob/gh-pages/LabLog/2014-10-10-Intro-to-RR-Demo.html
