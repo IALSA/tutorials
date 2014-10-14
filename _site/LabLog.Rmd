@@ -30,13 +30,12 @@ Study: OCTO TWIN
 In focus: Personality and Dementia
 
 ### October 10 
-
-Topic: [Into to RR (Demo) ][20141010] 
-Study: OCTO TWIN
-In focus: Personality and Dementia
+Topic: [Intro to RR (Demo)][20141010]    
+Study: OCTO TWIN  
+In focus: Personality and Dementia  
 
 [20140912]:./LabLog/12-09-2014-Line-graphs-OCTO.html
-[20140919]:/LabLog/19-09-2014-From-Raw-to-Draw.html
-[20140926]:/LabLog/26-09-2014-Dementia-Personality-OCTO.html
-[20141003]:/LabLog/03-10-2014-Dementia-Personality-OCTO-Part2.html
-[20140910]:/LabLog/2014-10-10-Intro-to-RR-Demo.html
+[20140919]:./LabLog/19-09-2014-From-Raw-to-Draw.html
+[20140926]:./LabLog/26-09-2014-Dementia-Personality-OCTO.html
+[20141003]:./LabLog/03-10-2014-Dementia-Personality-OCTO-Part2.html
+[20141010]:./LabLog/2014-10-10-Intro-to-RR-Demo.html

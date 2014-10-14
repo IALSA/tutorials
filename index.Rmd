@@ -4,12 +4,11 @@ title: "IALSA tutorials homepage"
 
 ***
 
-### Welcome 
-
-Hello and welcome to the tutorials on Reproducible Research with R (RRR).  
+Welcome to IALSA tutorials . This website hosts a series of guides, tech notes, and articles on issues related to reproducible research. Produced and maintained by [iLifespan](https://ilifespan.org) lab at the University of Victoria, this resource helps [IALSA](ialsa.org) researchers  stay on the cutting edge of data science methods. 
 </br>
 
-This website offers a series of guides and tutorials on reproducible research with [RStudio](rstudio.com).
+
+For the Centre on Aging ([COAG](http://www.coag.uvic.ca/)) Fall 2014 Methodology Colloquium lecture series, please follow the [link](http://ialsa.github.io/tutorials/2014F-COAG-Colloquium.html)
 
 
 
