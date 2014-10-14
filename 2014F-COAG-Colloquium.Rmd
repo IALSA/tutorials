@@ -43,12 +43,12 @@ Analysis of Longitudinal Studies of Aging (IALSA; NIH/NIA 1P01AG043362) Research
 ## Lecture Summaries
 
 
-### October 10   
+**Oct 10, 2014**  
 Andrey Koval (University of Victoria)  
 [Toolbox and Skillset of Reproducible Research][lecture1]   
 The lecture introduces reproducible research and demonstrates digital self-publishing with RStudio and Git (Hub). The skills described and emphasized in this workflow include data manipulation, graph production, statistical modeling, and dynamic reporting. A more elaborate discussion of each basic skill will be provided in the next four lectures.    
 
-**Tuesday, Oct 21, 2014**    
+**October 21**    
 Andrey Koval (University of Victoria)    
 RR Basic Skills (1): Data Manipulation  
 The lecture covers the process of importing, transforming, and saving data with R and RStudio.   
@@ -56,13 +56,13 @@ Topics: data entry and import; techniques and practices of cleaning data; organi
 reshaping data; saving, storing, and exporting data.     
 
 </br>
-**Tuesday, Oct 28, 2014**  
+**October 28, 2014**  
 Brian Flaherty (University of Washington)  
 Introduction to Latent Class and Latent Transition Models: Matching Models to Questions to Data
 Lecture details to follow.  
 
 </br>
-**Tuesday, Nov 4, 2014**  
+**Nov 4, 2014**  
 Andrey Koval (University of Victoria)  
 RR Basic Skills (2): Graph Production  
 The lecture introduces the grammar of graphics and its implementation in R.   
@@ -70,11 +70,11 @@ Topics: basic R graphic utility; producing basic graphs with ggplot2; graph tuni
 graphs for publishing.   
 
 </br>
-Tuesday, Nov 11, 2014    
+Nov 11, 2014    
 Remembrance Day (No Presentation)    
 
 </br>
-**Tuesday, Nov 18, 2014**   
+**Nov 18, 2014**   
 Andrey Koval (University of Victoria)    
 RR Basic Skills (3): Statistical modeling    
 The lecture introduces model fitting in R and discusses popular packages for estimating statistical 
@@ -82,7 +82,7 @@ models (lm, gls, lme4, etc.). Fitting of linear and mixed models of longitudinal
 The strategy of organizing and post-processing of the model output is discussed.   
 
 </br>
-**Tuesday, Nov 25, 2014**  
+**Nov 25, 2014**  
 Andrey Koval (University of Victoria)  
 RR Basic Skills (4): Dynamic Reporting  
 The lecture introduces publishing with knitr and rmarkdown packages inside RStudio. A brief tutorial on 
@@ -91,7 +91,7 @@ a discussion on the strategy of report production. Several output formats (pdf, 
 considered.     
 
 </br>
-**Tuesday, Dec 2, 2014**  
+**Dec 2, 2014**  
 Andrey Koval (University of Victoria)  
 Migrating into R from other Statistical Software  
 The lecture discusses the challenges and opportunities of multilingual estimation. 
