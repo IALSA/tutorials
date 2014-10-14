@@ -48,7 +48,7 @@ Andrey Koval (University of Victoria)
 [Toolbox and Skillset of Reproducible Research][lecture1]   
 The lecture introduces reproducible research and demonstrates digital self-publishing with RStudio and Git (Hub). The skills described and emphasized in this workflow include data manipulation, graph production, statistical modeling, and dynamic reporting. A more elaborate discussion of each basic skill will be provided in the next four lectures.    
 
-**October 21**    
+**Oct 21, 2014**    
 Andrey Koval (University of Victoria)    
 RR Basic Skills (1): Data Manipulation  
 The lecture covers the process of importing, transforming, and saving data with R and RStudio.   
@@ -56,7 +56,7 @@ Topics: data entry and import; techniques and practices of cleaning data; organi
 reshaping data; saving, storing, and exporting data.     
 
 </br>
-**October 28, 2014**  
+**Oct 28, 2014**  
 Brian Flaherty (University of Washington)  
 Introduction to Latent Class and Latent Transition Models: Matching Models to Questions to Data
 Lecture details to follow.  
