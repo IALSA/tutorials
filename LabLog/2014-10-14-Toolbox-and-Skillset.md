@@ -127,29 +127,60 @@ let's demonstrate how we can accomplish each of these tasks on a [R simulator](h
 
 A. Load and inspect datasets
 ========================================================
-```{r block1, message=FALSE}
+
+```r
 ds <- mtcars
 str(ds, 10)
 ```
 
+```
+'data.frame':	32 obs. of  11 variables:
+ $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+ $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+ $ disp: num  160 160 108 258 360 ...
+ $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+ $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+ $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+ $ qsec: num  16.5 17 18.6 19.4 17 ...
+ $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+ $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+ $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+ $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
+```
+
 B. Depict data as statistical graphics
 ========================================================
-```{r block2, message=FALSE}
+
+```r
 require(ggplot2)
 p <- ggplot(mtcars, aes(x=wt, y=mpg)) 
 p <- p + geom_point()
 p
 ```
 
+![plot of chunk block2](2014-10-14-Toolbox-and-Skillset-figure/block2.png) 
+
 C. Fit statistical models
 ========================================================
-```{r block3, message=FALSE}
+
+```r
 lm(mpg ~ wt, mtcars)
+```
+
+```
+
+Call:
+lm(formula = mpg ~ wt, data = mtcars)
+
+Coefficients:
+(Intercept)           wt  
+      37.29        -5.34  
 ```
 
 D. Compare observed and modeled data
 ========================================================
-```{r block4, message=FALSE}
+
+```r
 require(ggplot2)
 ds <- mtcars
 ds$mpg_modeled <- predict(lm(mpg ~ wt, mtcars))
@@ -159,9 +190,12 @@ p <- p + geom_point(aes(y=mpg_modeled),color="red")
 p
 ```
 
+![plot of chunk block4](2014-10-14-Toolbox-and-Skillset-figure/block4.png) 
+
 D. Compare observed and modeled data
 ========================================================
-```{r block4a, message=FALSE}
+
+```r
 require(ggplot2)
 ds <- mtcars
 ds$mpg_modeled <- predict(lm(mpg ~ wt, mtcars))
@@ -170,6 +204,8 @@ p <- p + geom_point()
 p <- p + geom_line(aes(y=mpg_modeled),color="red")
 p
 ```
+
+![plot of chunk block4a](2014-10-14-Toolbox-and-Skillset-figure/block4a.png) 
 
 
 
