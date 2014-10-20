@@ -1,0 +1,234 @@
+<style type="text/css">
+.small-code pre code {
+   font-size: 1.1em;
+}
+</style>
+
+
+Toolbox and Skillset of Reproducible Research
+========================================================
+author: Andrey Koval
+date: October 14, 2014
+transition: fade
+transition-speed: fast
+
+
+
+The Laboratory for Integrative Lifespan Research   
+Department of Psychology  
+University of Victoria  
+
+bio
+===
+ - Vanderbilt, 2014
+ - Quantitative Methods
+ - [Joseph Lee Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) 
+ - Research Interests: longitudinal modeling and statistical graphics
+ - Dissertation: how dynamic documents can help in statistical modeling
+
+  
+Workflow in research projects
+===
+![traditional](images/ai/2014-10-14-Toolbox-Skillset_trad.png)  
+
+Academic Paper: 
+- Introduction
+- Methods
+- Results
+- Discussion
+
+Workflow in research projects
+===
+![traditional soft](images/ai/2014-10-14-Toolbox-Skillset_trad_soft.png)
+
+
+Workflow in research projects
+===
+![reproducible soft](images/ai/2014-10-14-Toolbox-Skillset_reprod_soft.png)
+
+
+
+Workflow in research projects
+===
+![reproducible](images/ai/2014-10-14-Toolbox-Skillset_reprod.png)
+
+
+
+Advantages of RR
+========================================================
+![reproducible](images/ai/2014-10-14-Toolbox-Skillset_reprod_small.png)
+
+- Less prone to human error  
+- Removes tedious jobs  
+- Recordable workflow  
+- Correcting mistakes later  
+- Synchronizes analysis and discussion  
+
+TOOLBOX and toolset of RR
+========================================================
+![reproducible](images/ai/2014-10-14-Toolbox-Skillset_reprod_small.png)
+ - R
+ - RStudio
+ - GitHub
+ 
+ TOOLBOX : R
+========================================================
+![R](images/r-print.png)
+
+
+ TOOLBOX : RStudio
+========================================================
+![RStudio](images/rstudio-print.png)
+
+
+ TOOLBOX : GitHub
+========================================================
+![github](images/github-print.png)
+[GitHub](github.com)
+ 
+
+toolbox and SKILLSET of RR
+========================================================
+![reproducible](images/ai/2014-10-14-Toolbox-Skillset_reprod_small.png) 
+ - Data Manipulation  
+ - Graph Production  
+ - Statistical Modeling  
+ - Dynamic Reporting  
+ 
+ see [ialsa.github.io/tutorials](ialsa.github.io/tutorials) for knowledge base
+
+
+Goals of RR
+========================================================
+![reproducible](images/ai/2014-10-14-Toolbox-Skillset_reprod_small.png)
+</br>
+**Ultimate** : Answering a research question  
+</br>
+**Practical** : Publishing a paper, producing a manuscript   
+</br>  
+**Technical** : Producing a dynamic document   
+
+
+RR uses code to
+========================================================
+![reproducible](images/ai/2014-10-14-Toolbox-Skillset_reprod_small.png)  
+
+In the process of achieving these goals we encounter the need to perform particular tasks on a computer:
+
+**A.** Load and inspect datasets  
+**B.** Depict data in statistical graphics  
+**C.** Fit statistical models  
+**D.** Compare observed and modeled data  
+**E.** Produce reports discussing the steps above   
+
+let's demonstrate how we can accomplish each of these tasks on a [R simulator](https://demo.ocpu.io/markdownapp/www/)
+
+
+
+A. Load and inspect datasets
+========================================================
+```{r block1, message=FALSE}
+ds <- mtcars
+str(ds, 10)
+```
+
+B. Depict data as statistical graphics
+========================================================
+```{r block2, message=FALSE}
+require(ggplot2)
+p <- ggplot(mtcars, aes(x=wt, y=mpg)) 
+p <- p + geom_point()
+p
+```
+
+C. Fit statistical models
+========================================================
+```{r block3, message=FALSE}
+lm(mpg ~ wt, mtcars)
+```
+
+D. Compare observed and modeled data
+========================================================
+```{r block4, message=FALSE}
+require(ggplot2)
+ds <- mtcars
+ds$mpg_modeled <- predict(lm(mpg ~ wt, mtcars))
+p <- ggplot(ds, aes(x=wt, y=mpg)) 
+# p <- p + geom_point() 
+p <- p + geom_point(aes(y=mpg_modeled),color="red")
+p
+```
+
+D. Compare observed and modeled data
+========================================================
+```{r block4a, message=FALSE}
+require(ggplot2)
+ds <- mtcars
+ds$mpg_modeled <- predict(lm(mpg ~ wt, mtcars))
+p <- ggplot(ds, aes(x=wt, y=mpg)) 
+p <- p + geom_point() 
+p <- p + geom_line(aes(y=mpg_modeled),color="red")
+p
+```
+
+
+
+E. Produce report 
+========================================================
+We just did it!
+
+
+
+Recap
+===
+Traditional 
+![traditional soft](images/ai/2014-10-14-Toolbox-Skillset_trad_soft.png)
+vs Reproducible
+![reproducible soft](images/ai/2014-10-14-Toolbox-Skillset_reprod.png) 
+
+Recap
+===
+**Toolbox**
+ - R
+ - RStudio
+ - GitHub
+
+***   
+**Skillset**
+ - Data Manipulation  
+ - Graph Production  
+ - Statistical Modeling  
+ - Dynamic Reporting  
+ 
+
+Looking ahead
+===
+- Oct 14 -- Toolbox and Skillset of Reproducible Research (RR) 
+- Oct 21  -- RR Basic Skills (1): **Data** Manipulation
+- Oct 28  -- Intro to Latent Class and Latent Transition Models
+- Nov 4  -- RR Basic Skills (2): **Graph** Production
+- Nov 11  -- Remembrance Day (No Session)  
+- Nov 18  -- RR Basic Skills (3): Statistical **Modeling** 
+- Nov 25  -- RR Basic Skills (4): Dynamic **Reporting** 
+- Dec 2 -- Migrating into R from other Statistical Software 
+ 
+
+Resources
+===
+ - start with RStudio's [online learning](http://www.rstudio.com/resources/training/online-learning/)
+ - for brief reviews of key books and resources see Will Beasley's [Resources Opinions](https://github.com/OuhscBbmc/RedcapExamplesAndPatterns/blob/master/DocumentationGlobal/ResourcesOpinions.md)
+ - another presentation by Will will give you a excellent overview of [Statistical Collaboration with GitHub](http://htmlpreview.github.io/?https://raw.githubusercontent.com/OuhscBbmc/StatisticalComputing/master/2014_Presentations/05_May/BeasleyScugGitHub2014-05.html#/)
+ - Winston Chan's [R Cookbook](http://shop.oreilly.com/product/9780596809164.do) is a perfect book to get you started with producing graphs with RStudio
+ - [Quick-R](http://www.statmethods.net/) - thorough and convenient resource for R reference
+ </br>
+ - [ialsa.github.io/tutorials](http://ialsa.github.io/tutorials/) will be the sattelite resource for these lecture series, check for updates
+ 
+
+Fin
+===
+Questions?  
+Comments?  
+
+
+
+

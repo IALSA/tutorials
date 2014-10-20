@@ -1,0 +1,102 @@
+![islandhealth][islandhealth] ![uviccoag][uviccoag] ![popdata][popdata]  
+
+Optimizing Aging & Health: Methods and Applications
+===
+Centre on Aging Colloquium Series, Fall 2014  
+
+
+The Centre on Aging (COAG) is a research intensive centre at the University of Victoria, with members 
+engaged in aging research in its many forms, including both quantitative and qualitative methods, and 
+longitudinal, experimental, and intervention designs. A key emphasis is on advances in the health, 
+cognitive vitality, and well-being of an aging community. This colloquium series has been developed to 
+highlight both substantive and methodological innovations and applications in aging research. This fall, 
+our colloquium series emphasizes data management and statistical analysis using R software
+(http://www.r-project.org/) and statistical models for identifying trajectories and transitions in 
+longitudinal studies and administrative health data. This fall series will be of general interest to 
+researchers and students who wish to increase their expertise in statistical analysis using R.    
+ </br>
+**This series is hosted in partnership with the Department of Psychology, Education and Training Unit of 
+Population Data BC, the Island Health Research and Capacity Building Program, and and the Integrative 
+Analysis of Longitudinal Studies of Aging (IALSA; NIH/NIA 1P01AG043362) Research Network.**
+</br>
+
+**Location**: University of Victoria, Medical Sciences Building, Lecture Hall - Room 160  
+**Time** for all sessions: 10:30 am to 12:00 pm PST  
+**Note**: Sessions will also be available via live web streaming, register for the event  [here](http://conferences.uvic.ca/index.php/coag/coagevents)
+ 
+ 
+## Schedule of Events
+  
+- Tuesday, Oct 14, 2014 -- Toolbox and Skillset of Reproducible Research (RR) –- Andrey Koval (UVic)  
+- Tuesday, Oct 21, 2014 -- RR Basic Skills (1): Data Manipulation –- Andrey Koval (UVic)  
+- Tuesday, Oct 28, 2014 -- Introduction to Latent Class and Latent Transition Models: Matching Models to
+ Questions to Data -– Brian Flaherty (University of Washington)  
+- Tuesday, Nov 4, 2014 -- RR Basic Skills (2): Graph Production –- Andrey Koval  
+- Tuesday, Nov 11, 2014 -- Remembrance Day (No Session)  
+- Tuesday, Nov 18, 2014 -- RR Basic Skills (3): Statistical Modeling -– Andrey Koval  
+- Tuesday, Nov 25, 2014 -- RR Basic Skills (4): Dynamic Reporting -– Andrey Koval  
+- Tuesday, Dec 2, 2014 -- Migrating into R from other Statistical Software –- Andrey Koval  
+
+## Lecture Summaries
+
+
+**Oct 10, 2014**  
+Andrey Koval (University of Victoria)  
+[Toolbox and Skillset of Reproducible Research][lecture1]   
+The lecture introduces reproducible research and demonstrates digital self-publishing with RStudio and Git (Hub). The skills described and emphasized in this workflow include data manipulation, graph production, statistical modeling, and dynamic reporting. A more elaborate discussion of each basic skill will be provided in the next four lectures.    
+
+**Oct 21, 2014**    
+Andrey Koval (University of Victoria)    
+RR Basic Skills (1): Data Manipulation  
+The lecture covers the process of importing, transforming, and saving data with R and RStudio.   
+Topics: data entry and import; techniques and practices of cleaning data; organizing the data workflow; 
+reshaping data; saving, storing, and exporting data.     
+
+</br>
+**Oct 28, 2014**  
+Brian Flaherty (University of Washington)  
+Introduction to Latent Class and Latent Transition Models: Matching Models to Questions to Data
+Lecture details to follow.  
+
+</br>
+**Nov 4, 2014**  
+Andrey Koval (University of Victoria)  
+RR Basic Skills (2): Graph Production  
+The lecture introduces the grammar of graphics and its implementation in R.   
+Topics: basic R graphic utility; producing basic graphs with ggplot2; graph tuning and preparing your 
+graphs for publishing.   
+
+</br>
+Nov 11, 2014    
+Remembrance Day (No Presentation)    
+
+</br>
+**Nov 18, 2014**   
+Andrey Koval (University of Victoria)    
+RR Basic Skills (3): Statistical modeling    
+The lecture introduces model fitting in R and discusses popular packages for estimating statistical 
+models (lm, gls, lme4, etc.). Fitting of linear and mixed models of longitudinal data is demonstrated. 
+The strategy of organizing and post-processing of the model output is discussed.   
+
+</br>
+**Nov 25, 2014**  
+Andrey Koval (University of Victoria)  
+RR Basic Skills (4): Dynamic Reporting  
+The lecture introduces publishing with knitr and rmarkdown packages inside RStudio. A brief tutorial on 
+markdown language will be provided as well as a demonstration on integrating R code into reports, and 
+a discussion on the strategy of report production. Several output formats (pdf, html, slides) are 
+considered.     
+
+</br>
+**Dec 2, 2014**  
+Andrey Koval (University of Victoria)  
+Migrating into R from other Statistical Software  
+The lecture discusses the challenges and opportunities of multilingual estimation. 
+Showcase: Longitudinal mixed model in syntax of R, Mplus, SAS, and SPSS. Costs and benefits of 
+multilingualism in estimation. In focus: R package MplusAutomation as the means to post-process Mplus 
+estimation.  
+
+[islandhealth]:./images/island_health_logo_full.jpg  
+[uviccoag]:./images/CentreOnAgingLogo.gif  
+[popdata]:./images/populationDataBc.jpg  
+[lecture1]:./LabLog/2014-10-14-Toolbox-and-Skillset.html
