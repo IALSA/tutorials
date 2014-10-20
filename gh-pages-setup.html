@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title>Publishing websites with RStudio and GitHub</title>
+
+<script src="libs/jquery-1.11.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="libs/bootstrap-2.3.2/css/united.min.css" rel="stylesheet" />
+<link href="libs/bootstrap-2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-2.3.2/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+/* padding for bootstrap navbar */
+body {
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 0;
+  }
+}
+
+/* offset scroll position for anchor links (for fixed navbar)  */
+@media (min-width: 980px) {
+  .section h2 {
+    padding-top: 52px;
+    margin-top: -52px;
+  }
+  .section h3 {
+    padding-top: 52px;
+    margin-top: -52px;
+  }
+}
+
+
+/* don't use link color in navbar */
+.dropdown-menu>li>a {
+  color: black;
+}
+
+/* some padding for disqus */
+#disqus_thread {
+  margin-top: 45px;
+}
+
+</style>
+
+<link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="libs/highlight/textmate.css"
+      type="text/css" />
+<script src="libs/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+<div class="container-fluid main-container">
+
+
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="brand" href="/tutorials">IALSA tutorials</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+                    
+          <li class="dropdown">
+            <a href="setup" class="dropdown-toggle" data-toggle="dropdown">Setup <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+               <li class="nav-header">Windows</li>
+               <li><a href="toolbox-install.html">Toolbox</a></li>
+               <li><a href="gh-pages-setup.html">gh-pages</a></li>
+              <li class="divider"></li>
+              <li class="nav-header">iOS</li>
+              <li><a href="https://mac.github.com/">Git for OS</a></li>
+              
+               <li class="divider"></li>
+              <li class="nav-header">Linux</li>
+              <li><a href="https://help.github.com/articles/set-up-git">Basic install</a></li>
+            </ul>
+          </li>
+                 
+           <li class="dropdown">
+            <a href="data_manipulation" class="dropdown-toggle" data-toggle="dropdown">Data Manipulation <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+            Things we'll do to Data
+            <li class="divider"></li>
+               <li><a href="blank.html">Import</a></li>
+               <li><a href="blank.html">Query</a></li>
+               <li><a href="blank.html">Label</a></li>
+            <li class="divider"></li>	 
+               <li><a href="blank.html">Subset</a></li>
+               <li><a href="blank.html">Filter</a></li>
+               <li><a href="blank.html">Tranform</a></li>
+               <li><a href="blank.html">Sort</a></li>
+               <li><a href="blank.html">Summarize</a></li>
+               <li><a href="blank.html">Group</a></li>
+               <li><a href="blank.html">Merge</a></li>
+             <li class="divider"></li>	 
+               <li><a href="DM-with-dplyr.html">Melt</a></li>
+               <li><a href="DM-with-dplyr.html">Cast</a></li>
+             <li class="divider"></li>	 
+               <li><a href="blank.html">Export</a></li>
+              </ul>
+          </li>
+          
+          <li class="dropdown">
+            <a href="graph_production" class="dropdown-toggle" data-toggle="dropdown">Graph Production <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+               <li><a href="blank.html">Basic graphs in R</a></li>
+               <li><a href="blank.html">Grammar of graphics</a></li>
+               <li><a href="blank.html">ggplot2</a></li>
+               <li><a href="blank.html">print devices</a></li>
+	              <li class="divider"></li>
+              <li class="nav-header">bits</li>
+              <li><a href="bits/drawing-lines/Drawing-lines.html">Drawing lines</a></li>
+            </ul>
+          </li>
+          
+          
+          <li class="dropdown">
+            <a href="stat_modeling" class="dropdown-toggle" data-toggle="dropdown">Stat Modeling <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+               <li><a href="blank.html">lm</a></li>
+               <li><a href="blank.html">gls</a></li>
+               <li><a href="blank.html">lmer</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="dynamic_reporting" class="dropdown-toggle" data-toggle="dropdown">Dynamic Reporting <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+               <li><a href="blank.html">html pipeline</a></li>
+               <li><a href="blank.html">markdown</a></li>
+               <li><a href="blank.html">knitr</a></li>
+               <li><a href="blank.html">slides</a></li>
+            </ul>
+          </li>
+          
+          <li class="dropdown">
+            <a href="other" class="dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+               <li><a href="blank.html">ggvis</a></li>
+               <li><a href="blank.html">RShiny</a></li>
+               <li><a href="blank.html">Web development</a></li>
+               <li><a href="blank.html">Adobe CC</a></li>
+             <li class="nav-header">General Reference</li>
+               <li><a href="tips-and-tricks.html">Tips and Tricks</a></li>
+               <li><a href="links-and-resources.html">Links and Resources</a></li>
+            </ul>
+          </li>  
+          
+          <li class="dropdown">
+            <a href="lablog" class="dropdown-toggle" data-toggle="dropdown">Log <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+               <li><a href="LabLog.html">iLifespan lab sessions</a></li>
+                	 <li class="divider"></li>               
+               <li><a href="2014F-COAG-Colloquium.html">2014F COAG Colloquium </a></li>
+            </ul>
+          </li>         
+          
+        </ul>
+        <ul class="nav pull-right">
+          <a class="btn btn-primary" href="https://github.com/ialsa/tutorials">
+            <i class="fa fa-github fa-lg"></i>
+            GitHub
+          </a>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<div id="header">
+<h1 class="title">Publishing websites with RStudio and GitHub</h1>
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#a.-setting-up-jekyll-pipeline">A. Setting up Jekyll pipeline</a></li>
+<li><a href="#b.-preparing-for-publishing">B. Preparing for publishing</a></li>
+<li><a href="#c.-producing-the-website">C. Producing the website</a></li>
+<li><a href="#d.-connecting-to-disqus">D. Connecting to Disqus</a></li>
+</ul>
+</div>
+
+<p>At the end of <a href="http://rmarkdown.rstudio.com/html_document_format.html#creating-a-website">discussion</a> on how to produce <code>HTML</code> documents from <code>.Rmd</code> the official page of the <code>rmarkdown</code> package mentions that entire website can be produced using R Markdown and the described methodology.</p>
+<p>Creating a website similar to <a href="rmarkdown.rstudio.com">rmarkdown.rstudio.com</a> can be accomplished using a combination of GitHub Pages and Jekyll (static website generator). The current guide narrates the process of <strong>publishing a statitic, blog-aware website from a GitHub repository</strong> containing multiple <strong>.html</strong> files, printed from <strong>.Rmd</strong> files and united by common attributes in the <code>**_output.yaml**</code> options file.</p>
+<div id="starting-point" class="section level4">
+<h4>Starting Point</h4>
+<p>To organize the process of learning new concepts and terminology we start with <a href="https://help.github.com/categories/20/articles">GitHub Pages Help</a>. There is a difference between producing a website for a user or organization, and the a website for a specific project. One can use an <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">Automatic Page Generator</a>, but from my understanding so far the limitations of this approach might be substantial. Please report on the use of this technique in the comments and I’ll update this section.</p>
+</div>
+<div id="a.-setting-up-jekyll-pipeline" class="section level2">
+<h2>A. Setting up Jekyll pipeline</h2>
+<p>To set up Jekyll publishing you will need (I)<a href="https://www.ruby-lang.org/en/">Ruby</a> language, (II)dependency manager <a href="http://bundler.io/">Bundler</a> and (III)atomatic page generator <a href="jekyllrb.com">Jekyll</a> :</p>
+<div id="i-ruby" class="section level3">
+<h3>(I) Ruby</h3>
+<ol style="list-style-type: decimal">
+<li>Install <strong>Ruby</strong> for Windows using <a href="https://www.ruby-lang.org/en/installation/#rubyinstaller">RubyInstaller</a><br /></li>
+</ol>
+<ul>
+<li>I used version: <strong>Ruby 1.9.3-p545</strong></li>
+<li>check <strong>Add Ruby executables to your PATH</strong> box, I checked all</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Download Developmental Kit (<strong>DevKit</strong>) from the Ruby’s [download]<a href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a>) page</li>
+</ol>
+<ul>
+<li>I used version: tdm-32-4.5.2</li>
+<li>Unpack zip into folder <code>DevKit</code> inside the folder where Ruby was installed.<br /></li>
+<li>Follow the <a href="https://github.com/oneclick/rubyinstaller/wiki/Development-kit">guide</a> to properly instlall the kit.</br><br />In brief:
+<ol style="list-style-type: lower-alpha">
+<li><p>Open the folder wher DevKit was unzipped</p>
+<pre><code>  cd c:\Ruby193\DevKit </code></pre></li>
+<li><p>Generate <code>config.yml</code> file:</p>
+<pre class="ruby"><code> ruby dk.rb init</code></pre>
+<p>and edit it (optional) to add or remove Rubies.</p></li>
+<li><p>Finally, enhance your Rubies with DevKit:</p>
+<pre class="ruby"><code> ruby dk.rb install</code></pre></li>
+<li><p>Test installation:</p>
+<pre class="ruby"><code>gem install json --platform=ruby</code></pre>
+<p>you should see “with native extensions”&quot; in the screen messages. To confirm that the json gem is working, run:</p>
+<pre class="ruby"><code>ruby -rubygems -e &quot;require &#39;json&#39;; puts JSON.load(&#39;[42]&#39;).inspect&quot;</code></pre>
+<p>This is supposed to return “42” for a successful test. For more see [Jekyll installation guide for Windows] (<a href="http://jekyll-windows.juthilo.com/">http://jekyll-windows.juthilo.com/</a>)</p></li>
+</ol></li>
+</ul>
+</div>
+<div id="ii-bundler" class="section level3">
+<h3>(II) Bundler</h3>
+<p>Now you need to install Bundler into the root directory of your GitHub repository (Important: make sure that you’ve selected gh-pages branch). a. Open the local folder of you repositoyr (~GitHub/RepositoryName) b. Initiate command prompt by typing <code>cmd</code> in the address bar of the File Explorer<br /> c. Type in <code>gem install bundler</code> in the command line<br /> - the text should say that the 1 gem has been installed</p>
+</div>
+<div id="iii-jekyll" class="section level3">
+<h3>(III) Jekyll</h3>
+<ol style="list-style-type: lower-alpha">
+<li>Create a text file <code>Gemfile.txt</code> in the root of the repository</li>
+<li><p>The content of the file is</p>
+<pre><code>source &#39;https://rubygems.org&#39;
+gem &#39;github-pages&#39;</code></pre></li>
+<li>Rename <code>Gemfile.txt</code> into <code>Gemfile</code><br /></li>
+<li><p>Run command line <code>bundle install</code><br />The code in step (d.) should executed for each repository you want to publish as a website, whereas the installation of Bundler (step II.) is done once per machine.</p></li>
+</ol>
+</div>
+</div>
+<div id="b.-preparing-for-publishing" class="section level2">
+<h2>B. Preparing for publishing</h2>
+<p>Jekyll will take the collection of files and folders in the “gh-pages” of your repository and assemble a static website out of them.</p>
+<p>Here I demonstrate how to replicate verbatim the styles and settings from the official website of <a href="https://github.com/rstudio/rmarkdown/tree/gh-pages">rmarkdown</a>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Go to the <strong>gh-pages</strong> branch of the <a href="https://github.com/rstudio/rmarkdown/tree/gh-pages">rmarkdown</a> GitHub repository (you may need to clone it to your machine if you haven’t done so already)</p></li>
+<li>Into the root of <strong>your</strong> project’s <em>gh-pages</em> branch, copy the following:
+<ul>
+<li>folder <strong>libs</strong> containing style libraries</li>
+<li>folder <strong>include</strong> containing header (menu) and footer (comments) for the website</li>
+<li>file <code>Makefile</code> - clarify the function</li>
+<li>file <code>_output.yaml</code> - defining the common output options for .Rmd files<br />In the future, these styles can be modified to fit the needs of the project.</li>
+<li>Alternative to steps III.a - III.c, you can copy an existing file “Gemfile”</li>
+</ul></li>
+</ol>
+<p>NOTE: I’m still working on editing the styles of the site. Two routes are possibles:<br /> - Route One : edit the min.js style libraries directly - Route Two : find a better fitting Bootstrap templates.<br /> These routes need researching before recommendation for reproduction. Please report your tests in the comments.</p>
+</div>
+<div id="c.-producing-the-website" class="section level2">
+<h2>C. Producing the website</h2>
+<p>At this point the website is a collection of .Rmd files stored in a single repository. Their output attributes are shared and controlled by <code>output.yaml</code> in the root. To produce the website execute the following steps:</p>
+<ol style="list-style-type: decimal">
+<li>Run “produceReports.R” scripts that prints HTML from all .Rdm files. For example:</li>
+</ol>
+<pre><code>path_index&lt;- base::file.path(&quot;./index.Rmd&quot;)
+path_ghPages&lt;- base::file.path(&quot;./gh-pages-setup.Rmd&quot;)
+path_workStation&lt;- base::file.path(&quot;./work-station-setup.Rmd&quot;)
+
+buildthese&lt;- c(path_index, path_ghPages,path_workStation)
+
+for( pathRmd in buildthese ) {
+  rmarkdown::render(input = pathRmd,output_format=c(&quot;html_document&quot;), clean=TRUE)
+}</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Open command line from the repository’s root and execute</p>
+<pre><code>bundle exec jekyll serve</code></pre>
+<p>This will assemble the website and deploy it to the local host. Examine it at</p>
+<pre><code>localhost:4000</code></pre>
+<p>Alternatively, you can add this line at the end of “produceReports.R” script</p>
+<pre><code># base::system(&quot;bundle exec jekyll build&quot;) 
+# or
+# base::system(&quot;bundle exec jekyll serve&quot;)</code></pre>
+<p>However, I’m not sure, whether the working directory is passed to jekyll or not. Needs testing.</p></li>
+<li><p>Commit and sync the changes in the gh-pages branch. The website should become availible at</p>
+<pre><code>username.github.io/projectname</code></pre>
+<p>or a custom address.</p></li>
+</ol>
+<p>To change the website one must repeat these steps after introducing changes in the initial .Rmd files</p>
+</div>
+<div id="d.-connecting-to-disqus" class="section level2">
+<h2>D. Connecting to Disqus</h2>
+<ol style="list-style-type: decimal">
+<li><p>Register an account with <a href="disqus.com">Disqus</a> if you haven’t already.</p></li>
+<li><p>When logged in go to Settings got Admin area</p></li>
+<li><p>Click on the drop-down button and select “Add new site”</p></li>
+<li><p>Enter the names of your blog, that will be hosted on disqus servers.</p></li>
+<li>After completing the registration the promt will take you to the page containing code snippets you have to add to your website to enable the comments</li>
+</ol>
+<ul>
+<li>copy the snippets into appropriate places in the file <strong>./include/after_body.html</strong></li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li>Re-run the steps 1-3 from the previous subsection. The comments should be enabled now.</li>
+</ol>
+</div>
+
+
+<!-- some extra javascript for older browsers -->
+<script type="text/javascript" src="libs/polyfill.js"></script>
+
+<script>
+
+// manage active state of menu based on current page
+$(document).ready(function () {
+
+    // active menu
+    href = window.location.pathname
+    href = href.substr(href.lastIndexOf('/') + 1)
+    $('a[href="' + href + '"]').parent().addClass('active');
+
+    // manage active menu header
+    if (href.startsWith('authoring_'))
+      $('a[href="' + 'authoring' + '"]').parent().addClass('active');
+    else if (href.endsWith('_format.html'))
+      $('a[href="' + 'formats' + '"]').parent().addClass('active');
+    else if (href.startsWith('developer_'))
+      $('a[href="' + 'developer' + '"]').parent().addClass('active');
+
+});
+
+</script>
+
+<!-- disqus -->
+         <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'ialsatutorials'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'ialsatutorials'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+
+</body>
+</html>
