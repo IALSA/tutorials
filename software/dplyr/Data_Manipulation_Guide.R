@@ -12,7 +12,21 @@ require(ggplot2)
 
 ############################
 ## @knitr LoadData
-dsL<-readRDS("./Data/Derived/dsL.rds")
+dsL<-readRDS("https://github.com/andkov/Longitudinal_Models_of_Religiosity_NLSY97/blob/master/Data/Derived/dsL.rds")
+
+file <- "<a href="https://github.com/andkov/Longitudinal_Models_of_Religiosity_NLSY97/raw/master/Data/Derived/dsL.rds">dsL</a>"
+
+raw_data <- readRDS(file)
+
+
+
+url <- "https://github.com/andkov/Longitudinal_Models_of_Religiosity_NLSY97/raw/master/Data/Derived/dsL.csv"
+my_data <- read.csv(url, header = TRUE)
+
+
+url <- "https://github.com/andkov/Longitudinal_Models_of_Religiosity_NLSY97/raw/master/Data/Derived/dsL.rds"
+dsL <- readRDS(url)
+
 ############################
 ## @knitr TweakData
 
