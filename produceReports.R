@@ -1,7 +1,7 @@
 rm(list=ls(all=TRUE))
 ########## Production of reports from .Rmd files ###
 
-patternToBuild <- "(?<!README)\\.(R){0,1}md$" #Gets all 'Rmd' and 'md' files, that aren't named `README`.
+patternToBuild <- "(?<!README)\\.Rmd$" #Gets all 'Rmd' , that aren't named `README`.
 pathFilesToBuild <- list.files(full.names=TRUE, recursive=TRUE)
 pathFilesToBuild <- grep(patternToBuild, pathFilesToBuild, perl=TRUE, value=TRUE)
 
@@ -17,5 +17,5 @@ for( pathFile in pathFilesToBuild ) {
                     clean=TRUE)
 }
 
-base::system("bundle exec jekyll build")
+# base::system("bundle exec jekyll build")
 
