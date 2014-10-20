@@ -51,7 +51,7 @@ opts_chunk$set(
 echoChunks <- FALSE
 warningChunks<- FALSE
 options(width=120) #So the output is 50% wider than the default.
-read_chunk("./Vignettes/dplyr/using_dplyr.R") # the file to which knitr calls for the chunks
+read_chunk("./software/dplyr/Data_Manipulation_Guide.R") # the file to which knitr calls for the chunks
 ```
 
 
