@@ -46,8 +46,8 @@ Andrey Koval (University of Victoria)
 The lecture introduces reproducible research and demonstrates digital self-publishing with RStudio and Git (Hub). The skills described and emphasized in this workflow include data manipulation, graph production, statistical modeling, and dynamic reporting. A more elaborate discussion of each basic skill will be provided in the next four lectures.    
 
 **Oct 21, 2014**    
-Andrey Koval (University of Victoria)    
-RR Basic Skills (1): Data Manipulation  
+Andrey Koval (University of Victoria)  
+[RR Skills (1): Data Manipulation][lecture2]        
 The lecture covers the process of importing, transforming, and saving data with R and RStudio.   
 Topics: data entry and import; techniques and practices of cleaning data; organizing the data workflow; 
 reshaping data; saving, storing, and exporting data.     
@@ -100,3 +100,4 @@ estimation.
 [uviccoag]:./images/CentreOnAgingLogo.gif  
 [popdata]:./images/populationDataBc.jpg  
 [lecture1]:./LabLog/2014-10-14-Toolbox-and-Skillset.html
+[lecture2]:./LabLog/2014-10-21-Data-Manipulation.html
