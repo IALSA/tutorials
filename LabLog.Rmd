@@ -58,8 +58,8 @@ In focus: Religiosity in Young Adults
 [20140926]:./LabLog/26-09-2014-Dementia-Personality-OCTO.html
 [20141003]:./LabLog/03-10-2014-Dementia-Personality-OCTO-Part2.html
 [20141010]:./LabLog/2014-10-10-Intro-to-RR-Demo.html
-[20141017]:http://htmlpreview.github.io/?https://raw.githubusercontent.com/IALSA/COAG-colloquium-2014F/master/Reports/2014-10-17-Data-Manipulation-_Demo_.html
-[20141031]:http://htmlpreview.github.io/?https://raw.githubusercontent.com/IALSA/COAG-colloquium-2014F/master/Reports/2014-10-31-Producing-Graphs-Demo.html
+[20141017]:./LabLog/2014-10-17-Data-Manipulation-firstDraft.html
+[20141031]:./LabLog/2014-10-31-Producing-Graphs-Demo.html
 
 
 
