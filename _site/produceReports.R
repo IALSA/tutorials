@@ -17,5 +17,5 @@ for( pathFile in pathFilesToBuild ) {
                     clean=TRUE)
 }
 
-# base::system("bundle exec jekyll build")
+base::system("bundle exec jekyll build")
 
