@@ -17,3 +17,8 @@ output:
 ## Presentation in R
 
 RStudio provides a native format for creating presentations - **.Rpres**, availible in the "New file" option. For a quick start with .Rpres see this [article](https://support.rstudio.com/hc/en-us/articles/200486468-Authoring-R-Presentations)
+
+
+## Quick Reference Tools
+
+ - [Most useful R commands](http://www.personality-project.org/r/r.commands.html) according to [personality-project.org](http://www.personality-project.org/index.html) ([William Revelle](http://www.personality-project.org/revelle.html))
