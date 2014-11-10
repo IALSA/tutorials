@@ -27,6 +27,8 @@ Each study will be placed in a separate repository that would contain the code f
   
   5. Check "Initialize this repository with a README" box  
   
+  6. 
+  
 #B. Adding Study Description 
   The purpose of this repository is to make data in a particular study approachable. This means providing clear and thorough documentation. Therefore managing project description will be just as important as developing the code itselt. We'll be developing  and storing our documentation in  a format called **markdown**. Files, stored in this format have extention **.md**  The first opportunity to practice markdown editing will be with the description of this project and the associated study. 
   
