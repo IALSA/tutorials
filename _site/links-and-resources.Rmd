@@ -6,6 +6,10 @@
 
   -  [Introduction to data cleaning in R](http://cran.r-project.org/doc/contrib/de_Jonge+van_der_Loo-Introduction_to_data_cleaning_with_R.pdf), a pdf book from cran.r-project.org
 
+## Markdown 
+
+  - excellent [markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet), first place to check for quick starts.
+
 ## Presentation in R
 
 RStudio provides a native format for creating presentations - **.Rpres**, availible in the "New file" option. For a quick start with .Rpres see this [article](https://support.rstudio.com/hc/en-us/articles/200486468-Authoring-R-Presentations)
