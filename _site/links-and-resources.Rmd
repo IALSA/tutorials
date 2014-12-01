@@ -1,6 +1,10 @@
-## Tutorials
+## R and Statistics
  
- - Collection of [R Tutorials](http://www.cyclismo.org/tutorial/R/) by Kelly Black from Clarkson Univeristy. Approximately covers an intro to stats undergrad course. 
+ - Collection of [R Tutorials](http://www.cyclismo.org/tutorial/R/) by Kelly Black at Clarkson Univeristy. Approximately covers an intro to stats undergrad course. 
+ 
+ - [Statistical Computing in R](http://www.pitt.edu/~njc23/) a biostatistics course by   Nicholas Christian at University of Pittsburgh.  Great series of slides on essential programming vocabulary and techniques  for statistical modeling. Exemplifies SWEAVE for report generation.
+ 
+ - [Introduction to Statistical Computing](http://fonnesbeck.github.io/Bios301/lectures.html) a biostatistics course by Cole Beck at Vanderbilt Univeristy. GitHub explained, knitr and markdwon used for reprot generation.  
  
 ## Data cleaning 
 
