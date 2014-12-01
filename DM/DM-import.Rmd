@@ -1,0 +1,36 @@
+---
+title: "Importing Data"
+output: html_document
+---
+
+References for importing data into R  
+  - [QuickR](http://www.statmethods.net/input/importingdata.html) (Excel, SPSS, SAS, Stata, systat)
+  - [RTutorial](http://www.r-tutor.com/r-introduction/data-frame/data-import) (Minitab)
+
+## manual table
+
+## Excel
+
+## .csv
+
+ - detailed tutorial on importing .csv and fixed width files
+
+## table
+ 
+ The funtion **read.table()** can imput a variety of data formats. See [details](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/read.table.html)
+
+## SPSS
+
+## SAS
+
+## Stata
+
+## systat
+
+## Minitab
+
+## 
+
+
+
+

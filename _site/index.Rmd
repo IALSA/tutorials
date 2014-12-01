@@ -4,7 +4,7 @@ Welcome to IALSA tutorials . This website hosts a series of guides, tech notes, 
 </br>
 
 
-For the Centre on Aging ([COAG](http://www.coag.uvic.ca/)) Fall 2014 Methodology Colloquium lecture series, please follow the [link](http://ialsa.github.io/tutorials/2014F-COAG-Colloquium.html)
+For the Centre on Aging ([COAG](http://www.coag.uvic.ca/)) Fall 2014 Methodology Colloquium lecture series, please follow the [link](http://ialsa.github.io/COAG-colloquium-2014F/)
 
 
 

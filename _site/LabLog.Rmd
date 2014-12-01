@@ -40,10 +40,26 @@ Topic: [Data Manipulation (Demo)][20141017]
 Study: [NLSY](https://www.nlsinfo.org/investigator/pages/login.jsp)    
 In focus: Religiosity in Young Adults    
 
+### October 31   
+Topic: [Graph Production (Demo)][20141031]   
+Study: [NLSY](https://www.nlsinfo.org/investigator/pages/login.jsp)    
+In focus: Religiosity in Young Adults 
+
+
+### November 7   
+Topic: [Establishing Data Access: Curating a Study][20141107]   
+Study: multiple    
+In focus: NA
+
+
 [20140912]:./LabLog/12-09-2014-Line-graphs-OCTO.html
 [20140919]:./LabLog/19-09-2014-From-Raw-to-Draw.html
 [20140926]:./LabLog/26-09-2014-Dementia-Personality-OCTO.html
 [20141003]:./LabLog/03-10-2014-Dementia-Personality-OCTO-Part2.html
 [20141010]:./LabLog/2014-10-10-Intro-to-RR-Demo.html
-[20141017]:http:/htmlpreview.github.io/?https://raw.githubusercontent.com/IALSA/COAG-colloquium-2014F/master/Reports/2014-10-17-Data-Manipulation-_Demo_.html
+[20141017]:./LabLog/2014-10-21-Data-Manipulation-firstDraft.html
+[20141031]:./LabLog/2014-10-31-Producing-Graphs-Demo.html
+[20141107]:./LabLog/2014-11-07-Curating-a-Study.html
+
+
 
