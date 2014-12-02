@@ -10,6 +10,18 @@
 
   -  [Introduction to data cleaning in R](http://cran.r-project.org/doc/contrib/de_Jonge+van_der_Loo-Introduction_to_data_cleaning_with_R.pdf), a pdf book from cran.r-project.org
 
+
+## Markdown 
+
+- a [cheatsheet](http://support.mashery.com/docs/customizing_your_portal/Markdown_Cheat_Sheet) by Mashery. 
+
+- in-browser [live markdown and R](https://demo.ocpu.io/markdownapp/www/) simulation. Great for immediate feedback on finding the right line editing.
+
+
+## General resources
+
+- [statistical computing](http://www.ats.ucla.edu/stat/) resource run by UCLA. Covers variaties of languages and modeling techniques. 
+
 ## Presentation in R
 
 RStudio provides a native format for creating presentations - **.Rpres**, availible in the "New file" option. For a quick start with .Rpres see this [article](https://support.rstudio.com/hc/en-us/articles/200486468-Authoring-R-Presentations)
