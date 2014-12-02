@@ -5,7 +5,6 @@ output:
     toc: yes
 ---
 
-
 ## R and Statistics
  
  - Collection of [R Tutorials](http://www.cyclismo.org/tutorial/R/) by Kelly Black at Clarkson Univeristy. Approximately covers an intro to stats undergrad course. 
