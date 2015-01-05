@@ -18,46 +18,46 @@ In focus: Hypertension and Cognition
 
 
 ### September 19
-Topic: [From Raw to Draw][20140919] 
-Study: OCTO TWIN
-In focus: Hypertension and Cognition
+Topic: [From Raw to Draw][20140919]  
+Study: OCTO TWIN  
+In focus: Hypertension and Cognition  
 
-Session introduced the concept of datastages. Basic map of dataflow is introduced.
+Session introduced the concept of datastages. Basic map of dataflow is introduced.  
 
 ### September 26 
-Topic: [Part 1 : Reshaping Data][20140926] 
-Study: OCTO TWIN
-In focus: Personality and Dementia
+Topic: [Part 1 : Reshaping Data][20140926]   
+Study: OCTO TWIN  
+In focus: Personality and Dementia  
 
 
 ## October
 
 ### October 3 
-Topic: [Part 2: Graphing Data][20141003] 
-Study: OCTO TWIN
-In focus: Personality and Dementia
-
-
-### October 10
-Topic: [Intro to RR (Demo)][20141010]  
+Topic: [Part 2: Graphing Data][20141003]   
 Study: OCTO TWIN  
 In focus: Personality and Dementia  
 
+
+### October 10
+Topic: [Intro to RR (Demo)][20141010]     
+Study: OCTO TWIN    
+In focus: Personality and Dementia    
+
 ### October 17   
-Topic: [Data Manipulation (Demo)][20141017]   
-Study: [NLSY](https://www.nlsinfo.org/investigator/pages/login.jsp)    
-In focus: Religiosity in Young Adults    
+Topic: [Data Manipulation (Demo)][20141017]     
+Study: [NLSY](https://www.nlsinfo.org/investigator/pages/login.jsp)      
+In focus: Religiosity in Young Adults      
 
 ### October 31   
-Topic: [Graph Production (Demo)][20141031]   
+Topic: [Graph Production (Demo)][20141031]    
 Study: [NLSY](https://www.nlsinfo.org/investigator/pages/login.jsp)    
-In focus: Religiosity in Young Adults 
+In focus: Religiosity in Young Adults  
 
 
 ### November 7   
-Topic: [Establishing Data Access: Curating a Study][20141107]   
-Study: multiple    
-In focus: NA
+Topic: [Establishing Data Access: Curating a Study][20141107]    
+Study: multiple     
+In focus: NA  
 
 
 [20140912]:./LabLog/12-09-2014-Line-graphs-OCTO.html
