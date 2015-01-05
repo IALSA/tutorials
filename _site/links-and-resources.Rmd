@@ -1,14 +1,32 @@
-## Tutorials
+## R and Statistics
  
- - Collection of [R Tutorials](http://www.cyclismo.org/tutorial/R/) by Kelly Black from Clarkson Univeristy. Approximately covers an intro to stats undergrad course. 
+ - Collection of [R Tutorials](http://www.cyclismo.org/tutorial/R/) by Kelly Black at Clarkson Univeristy. Approximately covers an intro to stats undergrad course. 
+ 
+ - [Statistical Computing in R](http://www.pitt.edu/~njc23/) a biostatistics course by   Nicholas Christian at University of Pittsburgh.  Great series of slides on essential programming vocabulary and techniques  for statistical modeling. Exemplifies SWEAVE for report generation.
+ 
+ - [Introduction to Statistical Computing](http://fonnesbeck.github.io/Bios301/lectures.html) a biostatistics course by Cole Beck at Vanderbilt Univeristy. GitHub explained, knitr and markdwon used for reprot generation.  
  
 ## Data cleaning 
 
   -  [Introduction to data cleaning in R](http://cran.r-project.org/doc/contrib/de_Jonge+van_der_Loo-Introduction_to_data_cleaning_with_R.pdf), a pdf book from cran.r-project.org
 
+<<<<<<< HEAD
 ## Markdown 
 
   - excellent [markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet), first place to check for quick starts.
+=======
+
+## Markdown 
+
+- a [cheatsheet](http://support.mashery.com/docs/customizing_your_portal/Markdown_Cheat_Sheet) by Mashery. 
+
+- in-browser [live markdown and R](https://demo.ocpu.io/markdownapp/www/) simulation. Great for immediate feedback on finding the right line editing.
+
+
+## General resources
+
+- [statistical computing](http://www.ats.ucla.edu/stat/) resource run by UCLA. Covers variaties of languages and modeling techniques. 
+>>>>>>> origin/gh-pages
 
 ## Presentation in R
 
